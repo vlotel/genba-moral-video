@@ -103,6 +103,38 @@
     cursor: pointer;
   }
   strong { color: #1a1a1a; }
+  details.shot {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  details.shot > summary {
+    cursor: pointer;
+    padding: 9px 14px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #555;
+    list-style: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  details.shot > summary::-webkit-details-marker { display: none; }
+  details.shot > summary::before {
+    content: "▶";
+    font-size: 0.7em;
+    color: var(--accent);
+    transition: transform .15s;
+  }
+  details.shot[open] > summary::before { transform: rotate(90deg); }
+  details.shot[open] > summary { border-bottom: 1px solid var(--border); }
+  details.shot .det-body { padding: 4px 14px 12px; }
+  details.shot .det-body table { margin: 10px 0; }
+  details.shot.cam > summary { color: #1f6f8b; }
+  details.shot.act > summary { color: #9a6a00; }
   @media (max-width: 600px) {
     body { font-size: 14px; }
     header h1 { font-size: 12px; }
@@ -169,6 +201,64 @@
 <hr />
 <h2 id="scene-1">シーン 1　オープニング</h2>
 <p><strong><code>0:00〜1:20</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 住宅地の「静かな朝の日常」を見せ、そこに工事現場が存在することの違和感を自然に示す。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>朝の静かな道路の空カット（人物なし）。木漏れ日や光が差す感じ</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>AI生成</strong></td>
+<td>遠くから登校する子ども（後ろ姿・遠景。現場が背景に入る構図をプロンプトで指定）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>住民が洗濯物を干すカット。2階ベランダからの目線と地上からの目線の2パターン</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定・望遠</td>
+<td>犬の散歩をする人。のどかな日常感</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>そのすぐ隣に工事現場がある全景カット。現場の存在感を出す</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定</td>
+<td>協力業者の車両が現場に入ってくるカット。静かな朝に車が入る対比</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 全て固定カメラで撮り、「静かな住宅地の日常」を強調する。工事現場が映り込む構図を意識すること。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li>このシーンは実キャストのセリフなし（ナレーションのみ）。映像で日常感を作る。</li>
+<li><strong>子ども</strong>：後ろ姿・遠景で<strong>AI生成</strong>。</li>
+<li><strong>住民（洗濯物・犬の散歩）</strong>：のどかな日常の空気。AI生成または協力者の遠景で。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>朝の住宅街。静かな道路。登校する子ども。洗濯物を干す住民。犬の散歩をする人。<br />
 そのすぐ隣に、工事現場がある。現場には、協力業者の車両が入り、職人たちが集まり始める。</p>
@@ -192,6 +282,65 @@
 <hr />
 <h2 id="scene-2">シーン 2　朝の現場到着</h2>
 <p><strong><code>1:20〜2:40</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 作業前の「何気ない行動」が近隣にどう見えているかを対比で見せる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定</td>
+<td>車がドアを強く閉める瞬間（音を強調。サウンドデザインで後処理も可）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>手持ち・近接</td>
+<td>高木・沼田の大声での会話。会話しながら歩くシーン。手持ちで距離感を出す</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定・低アングル</td>
+<td>沼田が資材置き場付近で横になるカット。地面から見上げる感じで撮る</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民の視点：カーテン越しに現場を見る。少し開けて覗く演出（現場の窓は参考アングルのみ撮影）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>坂口が声をかけるシーン全体</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>坂口→高木の会話。坂口アップ・高木アップ交互</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 「D：近隣住民のカット」はAI生成で対応。プロンプトは「薄いカーテン越し・ピントを甘く・不安げな表情」を指定。現場側では合成の下地として、住民宅の窓・カーテン越しの構図を人物なしで撮っておく。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木</strong>「眠いっすね」：本当に眠そうに。悪気ゼロで自然に。</li>
+<li><strong>沼田</strong>「休んでおけばいいだろ」：悪意ゼロ。本当にそれが普通だと思っている自然体。</li>
+<li><strong>坂口</strong>（声をかける）：責めず「みんなで気をつけよう」の雰囲気。軽く肩に手を置く親近感。</li>
+<li><strong>近隣住民</strong>（カーテン越し）：<strong>AI生成</strong>。ためらいながら開ける、不安げな表情。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>朝7時20分頃。協力業者の車両が現場付近に到着する。<br />
 車のドアを強めに閉める音。作業員同士の大きな話し声。<br />
@@ -231,6 +380,66 @@
 <hr />
 <h2 id="scene-3">シーン 3　朝礼前・7時30分の準備音</h2>
 <p><strong><code>2:40〜4:00</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 音の問題を視覚的にも表現する。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>クローズアップ</td>
+<td>時計が7:30を指しているカット。できれば実際の時計をCUで</td>
+</tr>
+<tr>
+<td>B</td>
+<td>固定</td>
+<td>工具箱が「ガン」と置かれる瞬間。音と映像を強調</td>
+</tr>
+<tr>
+<td>C</td>
+<td>手持ち・追い</td>
+<td>資材を引きずる職人の手元から足元へパン</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>AI生成</strong></td>
+<td>住民が室内で時計を見ながら現場の音に気づく</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>坂口が気づいて止めるシーン</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>山口が加わる3者の会話シーン</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 音の存在感を映像で表現するため、工具を置く瞬間・資材を動かす手元は<strong>クローズアップで強調</strong>すること。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木</strong>「準備だけでもですか？」：純粋な疑問。生意気でなく「本当に知らなかった」感じ。</li>
+<li><strong>沼田</strong>「準備だけだから」：完全に正論だと思っている顔。止められて「え、そうなの？」という驚き。</li>
+<li><strong>坂口</strong>（止める）：すぐ気づいて冷静に止める。</li>
+<li><strong>山口</strong>（加わる）：怒らない。「ご理解いただいて助かります」という姿勢。</li>
+<li><strong>近隣住民</strong>（時計を見る）：<strong>AI生成</strong>。怒りでなく困り。眉をひそめる程度。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>朝礼前の場面。時計は <strong>7時30分</strong>。近隣住宅がすぐ近くにある。<br />
 一部の職人が、朝礼前に工具を取り出し、資材を動かし始める。<br />
@@ -286,6 +495,54 @@
 <hr />
 <h2 id="scene-4">シーン 4　朝礼・協力業者として現場に入る意識</h2>
 <p><strong><code>4:00〜5:00</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> チームとして現場に入る意識の高揚感を出す。教訓的にならないよう、現場の雰囲気を大切に。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>全員が集まった朝礼の全体カット</td>
+</tr>
+<tr>
+<td>B</td>
+<td>固定・正面やや下から</td>
+<td>山口がスピーチするカット。リーダーとしての貫禄を出す</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>聞いている職人たちの表情カット（高木・沼田それぞれ）</td>
+</tr>
+<tr>
+<td>D</td>
+<td>切り返し</td>
+<td>坂口→高木の会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 山口のスピーチカットは「やや下から」撮ることで自然なリーダー感が出る。説教感にならないよう、山口の表情は<strong>穏やかに、しかし真剣に</strong>。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>山口</strong>（スピーチ）：大きすぎず小さすぎない声。全員の顔を見渡しながら。一方的な指示でなく「一緒にやっていこう」の雰囲気。</li>
+<li><strong>坂口</strong>：職人に向けて「指導」でなく「共有」の温度感で。「こうしよう」という言い方。</li>
+<li><strong>高木</strong>：素直に受け止めて聞く。反発しない。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>朝礼。元請け現場監督、協力会社職長、職人たちが集まっている。</p>
 </blockquote>
@@ -315,6 +572,54 @@
 <hr />
 <h2 id="scene-5">シーン 5　現場トイレ・設備配置への気づき</h2>
 <p><strong><code>5:00〜6:00</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 普段意識しない「設備の位置」への気づきをさりげなく描く。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>現場トイレと近隣住宅の窓が同フレームに入る構図</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民が窓から見て不快そうな表情。窓越しに現場が映り込む</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>高木・沼田が気づいて話す場面</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定</td>
+<td>坂口が山口に報告する会話</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木・沼田</strong>（気づく）：自然な気づき。「俺たちが置いたわけじゃないけど気になる」。</li>
+<li><strong>坂口</strong>（報告）：気づきを冷静に山口へ共有する。</li>
+<li><strong>山口</strong>（受ける）：誠実に受け止める。</li>
+<li><strong>近隣住民</strong>（窓から）：<strong>AI生成</strong>。嫌悪でなく「困ったな」という表情。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>朝礼後。高木と沼田が作業場所へ向かう途中、現場トイレが近隣住宅の窓に近い位置にあることに気づく。<br />
 近隣住民が窓から見て、少し不快そうな表情をする。</p>
@@ -354,6 +659,66 @@
 <hr />
 <h2 id="scene-6">シーン 6　午前作業・洗濯物の近くでの切断作業</h2>
 <p><strong><code>6:00〜7:45</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 「職人側の論理」と「住民側の感覚」の対比を映像で明確に見せる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>隣家の洗濯物と切断機が同フレームに入る全体カット（最重要カット）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>クローズアップ</td>
+<td>洗濯物のアップ（生活感を強調）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>高木・沼田が切断機を準備するカット</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>主観カット</strong></td>
+<td>住民の視点：ベランダから洗濯物越しに切断作業を見る</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>坂口が止めるカット</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>坂口→高木→沼田→山口の4者会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 「A：洗濯物と切断機が同フレーム」が核心。<strong>広角レンズで両方を同時に収める</strong>こと。住民の主観カットは洗濯物をフォアグラウンドに入れ、奥で職人が見える構図で。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木</strong>「効率だけで考えていました」：本当に効率だけで考えていた素直さ。</li>
+<li><strong>沼田</strong>「逆の立場なら気になるな」：<strong>転換点</strong>。坂口の言葉でスッと納得する素直な反省。</li>
+<li><strong>坂口</strong>（止める）：すぐ気づいて冷静に止める。「気づいた自分」の優しい誇りがにじむ。</li>
+<li><strong>山口</strong>：作業場所の変更を冷静に指示する。</li>
+<li><strong>近隣住民</strong>（主観カット）：洗濯物越しに不安げに見る視点（<strong>AI生成／主観</strong>）。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>午前作業。隣家のベランダに洗濯物が干されている。<br />
 その近くで、高木と沼田が材料の切断作業を始めようとしている。</p>
@@ -399,6 +764,77 @@
 <hr />
 <h2 id="scene-7">シーン 7　15時休憩・道路での休憩、喫煙、服装</h2>
 <p><strong><code>7:45〜9:15</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 休憩中の姿が周囲にどう見えるかを多角的に見せる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>道路脇に座っている職人たちの全体カット</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>通行人の主観</strong></td>
+<td>歩いてきたら職人が道路に座っている。歩きながらの手持ちで進行感を出す</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>通行人が避けて歩くカット。職人たちは画面の端に座っている</td>
+</tr>
+<tr>
+<td>D</td>
+<td>クローズアップ</td>
+<td>沼田がたばこを取り出し火をつけようとする手元（<strong>現場では火はつけない・煙は出さない</strong>）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>合成素材</td>
+<td>たばこの煙が住宅側に流れる映像（<strong>フリー素材を合成</strong>。現場では煙を出さない）</td>
+</tr>
+<tr>
+<td>F</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民が窓を閉める。窓を閉める手元のアップ</td>
+</tr>
+<tr>
+<td>G</td>
+<td>固定・引き</td>
+<td>坂口が声をかけるシーン。休憩組の全体＋坂口</td>
+</tr>
+<tr>
+<td>H</td>
+<td>切り返し</td>
+<td>坂口・山口・高木・沼田の会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 夏場想定のため、実際に暑い日に撮ると自然な「だらしない格好」が演出しやすい。ただし<strong>キャスト・スタッフの健康管理に最大限配慮すること</strong>。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木</strong>「端に座っているだけでも？」：純粋な疑問。</li>
+<li><strong>沼田</strong>（座り込み・喫煙）：悪気なく「邪魔にならなければ大丈夫だろ」の自然体。<strong>たばこは火をつけず取り出す仕草のみ</strong>。</li>
+<li><strong>坂口</strong>（注意）：責めず「共有」の温度感で。</li>
+<li><strong>山口</strong>（服装注意）：「もったいない」と惜しむ姿勢。命令口調にしない。</li>
+<li><strong>通行人</strong>：自然に避けて歩く。不満を顔に出しすぎない。</li>
+<li><strong>近隣住民</strong>（窓を閉める）：<strong>AI生成</strong>。そっと窓を閉める動作。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>15時休憩の時間。職人たちが作業の手を止め、休憩に入る。<br />
 高木が現場前の道路脇に腰を下ろして、飲み物を飲んでいる。別の職人も道路端に座り込んで休憩している。<br />
@@ -472,6 +908,70 @@
 <hr />
 <h2 id="scene-8">シーン 8　通行人への対応</h2>
 <p><strong><code>9:15〜10:45</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 「不十分な対応」と「丁寧な対応」の差を映像で際立たせる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>資材で通路が狭くなった状態の道路</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>通行人の視点・手持ち</strong></td>
+<td>進んできたら通れなくなる緊張感</td>
+</tr>
+<tr>
+<td>C</td>
+<td>切り返し</td>
+<td>通行人⇔高木の不十分なやりとり</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定・表情CU</td>
+<td>通行人が困った表情をするカット</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>坂口が入ってきて丁寧に誘導するカット</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定</td>
+<td>通行人が「ありがとうございます」と去っていくカット</td>
+</tr>
+<tr>
+<td>G</td>
+<td>切り返し</td>
+<td>坂口→高木の指導会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 通行人の視点カット（B）は<strong>手持ちで歩きながら撮影</strong>し、通路が狭くなる不安感を出すこと。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木</strong>（不十分な対応）：本当に焦っている。どうしたらいいか分からない目線。</li>
+<li><strong>通行人</strong>：「どこ行けばいいの？」という困惑・迷子感。坂口の対応後はパッと表情が明るく。</li>
+<li><strong>坂口</strong>（丁寧に誘導）：落ち着いて。言葉だけでなく手で誘導するジェスチャーを入れる。</li>
+<li><strong>山口</strong>：通行人対応は「全員で行うもの」という意識を冷静に伝える。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>資材搬入中。現場前の道路を通行人が通ろうとしている。<br />
 資材が置かれ、通路が狭くなっている。通行人が立ち止まる。</p>
@@ -526,6 +1026,78 @@
 <hr />
 <h2 id="scene-9">シーン 9　現場内の言葉遣い・乱暴な態度</h2>
 <p><strong><code>10:45〜12:10</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 現場内の雰囲気が外にどう漏れ出るかを見せる。暴力的な映像にならないよう注意。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>手持ち・近接</td>
+<td>沼田が怒鳴る会話シーン。手持ちで臨場感を出す</td>
+</tr>
+<tr>
+<td>B</td>
+<td>クローズアップ</td>
+<td>高木の萎縮した表情</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>沼田が資材を高木の足元近くに乱暴に叩きつける動き（音を強調）</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定</td>
+<td>高木が驚いて身を引く動作（<strong>身体接触はなし</strong>）</td>
+</tr>
+<tr>
+<td>E</td>
+<td><strong>AI生成</strong></td>
+<td>住民が現場の様子を見て驚く。表情のアップ（実撮影する場合は後ろ姿のみ）</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定</td>
+<td>坂口が作業を止める</td>
+</tr>
+<tr>
+<td>G</td>
+<td>切り返し</td>
+<td>坂口→沼田の指導会話</td>
+</tr>
+<tr>
+<td>H</td>
+<td>固定</td>
+<td>沼田が高木に向き直って謝るカット（関係の修復を示す）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重要：</strong> 身体接触は行わない（CLAUDE.md決定）。威圧感は<strong>資材を叩きつける音＋高木が身を引く動作</strong>で演出。叩きつけ音は近くのスマホでボイスメモ別収録すると迫力が増す。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント（重点シーン）</summary>
+<div class="det-body">
+<ul>
+<li><strong>沼田</strong>（怒鳴る）：怒りは本物。でも悪人ではない。<strong>焦り・プレッシャーから来る怒り</strong>として演じる。資材は安全を確認した足元側へ。</li>
+<li><strong>高木</strong>（萎縮）：萎縮するがやり返さない、固まる感じ。驚いて身を引く。</li>
+<li><strong>坂口</strong>（止める）：怒りでなく「困る」表情。沼田への敬意は保ちながら。</li>
+<li><strong>山口</strong>：感情的にならず「品質・安全の問題」として冷静に伝える。</li>
+<li><strong>沼田</strong>（謝る）：少し照れくさそうに、でもきちんと。ベテランが若手に謝れる人間の大きさ。</li>
+<li><strong>近隣住民</strong>（驚く）：<strong>AI生成／後ろ姿</strong>。ハッとして振り向く。</li>
+<li>⚠️ <strong>安全</strong>：叩きつけ位置の事前確認、身体接触なし。立ち位置とタイミングを事前にリハ。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>午後の作業。作業が少し遅れており、沼田が焦っている。高木が材料の置き場所を間違える。</p>
 </blockquote>
@@ -584,6 +1156,66 @@
 <hr />
 <h2 id="scene-10">シーン 10　近隣から注意を受けた後の対応</h2>
 <p><strong><code>12:10〜13:20</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 「受け止め方」と「その後の言動」の両方が見られていることを描く。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>住民が山口に話しかけるシーン全体（<strong>住民は後ろ姿</strong>で配置）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>切り返し</td>
+<td>住民⇔山口の会話。<strong>山口側のみ正面で撮影</strong>し誠実な表情を強調。住民は後ろ姿・手元。顔・声はAI合成</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定・引き</td>
+<td>少し離れた場所での高木・沼田の小声の会話</td>
+</tr>
+<tr>
+<td>D</td>
+<td>後ろ姿＋AI合成</td>
+<td>まだ近くにいた住民に言葉が聞こえてしまう。後ろ姿で撮影し、曇る表情はAI顔合成</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>坂口が気づいてすぐ動くカット</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>坂口→高木→沼田の会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント（B案）：</strong> 住民は<strong>実キャストの後ろ姿・手元のみ実撮影</strong>し、顔と声はAIで差し替え。①山口の切り返しを単独で成立させる構図、②後ろ姿の住民が山口と同フレームに入る引き、の両方を押さえる。住民の頭の高さ・髪・服装をAI生成側と合わせておく。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント（重点シーン）</summary>
+<div class="det-body">
+<ul>
+<li><strong>近隣住民</strong>（声をかける）：<strong>後ろ姿を実撮影＋AI顔合成</strong>。ゆっくり歩み寄り→話す所作→軽い会釈で立ち去る。表情はAI側で付与。演技力不要、所作だけ自然に。</li>
+<li><strong>山口</strong>（受ける）：深くお辞儀し、受け止める姿勢を体で表現。正面で誠実に。</li>
+<li><strong>高木・沼田</strong>（陰口）：小声で。沼田「細かいなあ」は悪気の薄い本音として。</li>
+<li><strong>近隣住民</strong>（聞こえた後）：<strong>後ろ姿＋AI</strong>。歩を止める／肩を落とす所作。曇る表情はAI合成。</li>
+<li><strong>坂口</strong>（気づく）：すぐ動く。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>近隣住民が現場前で山口に声をかける。</p>
 </blockquote>
@@ -636,6 +1268,75 @@
 <hr />
 <h2 id="scene-11">シーン 11　夕方・道路清掃と作業終了時間</h2>
 <p><strong><code>13:20〜14:35</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 「最後まで丁寧に」というメッセージを視覚的に気持ちよく終わらせる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>道路に土・泥が残っている状態（セッティング必要）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>クローズアップ</td>
+<td>泥の状態の地面アップ</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>高木・沼田がさぼろうとする会話</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>通行人の視点</strong></td>
+<td>汚れた道路を避けて歩く通行人</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>坂口・山口の指導会話</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定・引き</td>
+<td>全員でホウキを持って清掃するカット（達成感のある画）</td>
+</tr>
+<tr>
+<td>G</td>
+<td>クローズアップ</td>
+<td>高木が自ら気づいて「こっちも」と声をかける表情</td>
+</tr>
+<tr>
+<td>H</td>
+<td>固定</td>
+<td>清掃後のきれいな道路カット。Before/Afterの対比に使える</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li><strong>高木</strong>（前半）：「明日でもいいですかね」軽い気持ちで。<strong>後半は自分から「こっちも」と気づく＝山場</strong>。少し照れながらも自信がにじむ表情。</li>
+<li><strong>沼田</strong>「一人前だな」：温かい笑顔。視聴者がホッとする瞬間。</li>
+<li><strong>坂口</strong>（指導）：「現場の外に出た汚れも現場の責任」を落ち着いて。</li>
+<li><strong>山口</strong>（作業時間）：朝早すぎ・夜遅すぎへの注意を冷静に。</li>
+<li><strong>通行人</strong>：汚れた道路を避けて歩く。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>夕方。作業が終わりに近づいている。<br />
 現場前の道路に土や泥が残っている。資材の一部が乱れている。<br />
@@ -688,6 +1389,60 @@
 <hr />
 <h2 id="scene-12">シーン 12　エンディング</h2>
 <p><strong><code>14:35〜15:00</code></strong></p>
+<details class="shot cam">
+<summary>📹 カメラワーク</summary>
+<div class="det-body">
+<p><strong>演出意図：</strong> 1日を通じた学びの集大成。希望感・温かさで締める。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>清掃され整った現場の全景。夕方の光（ゴールデンアワー推奨）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>固定</td>
+<td>職人たちが服装を整えて現場を後にする後ろ姿</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>高木が通行人に会釈する。通行人が微笑む</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民が安心した表情で通り過ぎる（後ろ姿）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>誰もいなくなった現場の佇まい。タイトルテロップ用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 夕方の「ゴールデンアワー」（日没前の約1時間）に撮影できると映像が格段に美しくなる。<strong>撮影2日目の最後（夕方）</strong>に組み込むこと。</p>
+</div>
+</details>
+<details class="shot act">
+<summary>🎭 演技ポイント</summary>
+<div class="det-body">
+<ul>
+<li>実キャストのセリフなし（ナレーションのみ）。表情と所作で温かさを出す。</li>
+<li><strong>高木</strong>（会釈）：自然な温かさが出るまで繰り返す。</li>
+<li><strong>通行人</strong>：微笑んで会釈を返す。</li>
+<li><strong>近隣住民</strong>（安心）：<strong>AI生成／後ろ姿</strong>。柔らかい笑顔・ホッとした雰囲気。</li>
+</ul>
+</div>
+</details>
 <blockquote>
 <p>作業終了後の現場。道路は清掃され、資材も整理されている。<br />
 職人たちが服装を整え、現場を後にする。<br />

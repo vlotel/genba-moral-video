@@ -103,6 +103,38 @@
     cursor: pointer;
   }
   strong { color: #1a1a1a; }
+  details.shot {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  details.shot > summary {
+    cursor: pointer;
+    padding: 9px 14px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #555;
+    list-style: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  details.shot > summary::-webkit-details-marker { display: none; }
+  details.shot > summary::before {
+    content: "▶";
+    font-size: 0.7em;
+    color: var(--accent);
+    transition: transform .15s;
+  }
+  details.shot[open] > summary::before { transform: rotate(90deg); }
+  details.shot[open] > summary { border-bottom: 1px solid var(--border); }
+  details.shot .det-body { padding: 4px 14px 12px; }
+  details.shot .det-body table { margin: 10px 0; }
+  details.shot.cam > summary { color: #1f6f8b; }
+  details.shot.act > summary { color: #9a6a00; }
   @media (max-width: 600px) {
     body { font-size: 14px; }
     header h1 { font-size: 12px; }

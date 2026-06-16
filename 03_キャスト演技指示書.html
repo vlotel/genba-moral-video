@@ -103,6 +103,38 @@
     cursor: pointer;
   }
   strong { color: #1a1a1a; }
+  details.shot {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  details.shot > summary {
+    cursor: pointer;
+    padding: 9px 14px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #555;
+    list-style: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  details.shot > summary::-webkit-details-marker { display: none; }
+  details.shot > summary::before {
+    content: "▶";
+    font-size: 0.7em;
+    color: var(--accent);
+    transition: transform .15s;
+  }
+  details.shot[open] > summary::before { transform: rotate(90deg); }
+  details.shot[open] > summary { border-bottom: 1px solid var(--border); }
+  details.shot .det-body { padding: 4px 14px 12px; }
+  details.shot .det-body table { margin: 10px 0; }
+  details.shot.cam > summary { color: #1f6f8b; }
+  details.shot.act > summary { color: #9a6a00; }
   @media (max-width: 600px) {
     body { font-size: 14px; }
     header h1 { font-size: 12px; }
@@ -117,6 +149,12 @@
 <div class="content">
 <h1>キャスト演技指示書</h1>
 <h2>現場モラル動画「見られているのは、腕だけじゃない。」</h2>
+<hr />
+<blockquote>
+<p><strong>🎭 シーンごとの演技ポイントは台本に統合しました。</strong><br />
+「このシーンで誰がどう演じるか」は、<strong>台本「06_台本_見やすい版」の各シーン内「🎭 演技ポイント」</strong>（折りたたみ）にまとめてあります。撮影時はそちらを参照してください。<br />
+本書は、<strong>役作り（キャラクター像・外見・NG演技）と、全キャスト共通の心得・社内キャスト向けの配慮・リハーサルの進め方</strong>をまとめた、事前理解用のリファレンスです。</p>
+</blockquote>
 <hr />
 <h2>演出の大原則</h2>
 <blockquote>
@@ -183,6 +221,9 @@
 </table>
 <hr />
 <h2>キャスト別・演技詳細指示</h2>
+<blockquote>
+<p>以下の各キャラの「演技のポイント」表は、<strong>役の一貫した演じ方を把握するため</strong>のものです。撮影現場でシーン順に確認する際は、台本側の「🎭 演技ポイント」を使うと効率的です。</p>
+</blockquote>
 <hr />
 <h3>山口（元請け現場監督）</h3>
 <p><strong>キャラクター像：</strong><br />

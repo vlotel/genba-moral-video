@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>インサート撮影リスト｜現場モラル動画</title>
+
+<style>
+  :root {
+    --accent: #e8a020;
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --muted: #666;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 0 60px;
+  }
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  header a { color: var(--accent); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  header h1 { font-size: 14px; font-weight: 600; flex: 1; }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1 { font-size: 1.5em; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+  h2 { font-size: 1.2em; font-weight: 700; margin: 28px 0 10px; color: #1a1a1a; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.05em; font-weight: 700; margin: 20px 0 8px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 20px; }
+  li { margin: 4px 0; }
+  blockquote {
+    background: #fff8e8;
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    color: #555;
+    font-style: italic;
+  }
+  pre, code {
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+  code { background: #f0ede8; padding: 2px 5px; border-radius: 3px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.9em;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  th {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafafa; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+  input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--accent);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  .checklist li { list-style: none; margin-left: -20px; display: flex; align-items: flex-start; gap: 4px; padding: 3px 0; }
+  strong { color: #1a1a1a; }
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    header h1 { font-size: 12px; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; }
+  }
+</style>
+
+</head>
+<body>
+<header><a href="index.html">← 一覧へ</a><h1>インサート撮影リスト</h1></header>
+<div class="content">
+<h1>インサート撮影リスト</h1>
+<h2>現場モラル動画「見られているのは、腕だけじゃない。」</h2>
+<hr />
+<blockquote>
+<p><strong>インサート撮影の目的</strong><br />
+- メインの対話シーンを「切り替える」つなぎカット<br />
+- 状況・感情・時間の流れを補足する説明カット<br />
+- 編集で使い回しができる汎用カットのストック</p>
+</blockquote>
+<hr />
+<h2>撮影優先度の凡例</h2>
+<table>
+<thead>
+<tr>
+<th>マーク</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★★★</td>
+<td>必須。ないと編集が成立しない</td>
+</tr>
+<tr>
+<td>★★☆</td>
+<td>推奨。あると動画の質が上がる</td>
+</tr>
+<tr>
+<td>★☆☆</td>
+<td>任意。時間があれば撮っておきたい</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 1　オープニング用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-1</td>
+<td>住宅街の道路</td>
+<td>静かな朝の景色。誰もいない路地</td>
+<td>★★★</td>
+<td>早朝5:30〜6:00頃。車や人が少ない時間帯を狙う</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>工事現場の仮囲い</td>
+<td>社名・施工会社名が入った囲い</td>
+<td>★★☆</td>
+<td>俯瞰か正面から。全体が入る構図</td>
+</tr>
+<tr>
+<td>1-3</td>
+<td>協力会社の車両</td>
+<td>入ってくる車のタイヤ・ドア・荷台</td>
+<td>★★☆</td>
+<td>地面近くからのローアングル</td>
+</tr>
+<tr>
+<td>1-4</td>
+<td>道路標識・住所表示</td>
+<td>住宅地らしさを示す看板</td>
+<td>★☆☆</td>
+<td>ボケ味を活かして背景に住宅を入れる</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 2　朝の到着用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2-1</td>
+<td>車のドア（閉める瞬間）</td>
+<td>勢いよく閉まる音と動作</td>
+<td>★★★</td>
+<td>スローモーション設定で撮ると編集で使いやすい</td>
+</tr>
+<tr>
+<td>2-2</td>
+<td>カーテンが揺れる窓</td>
+<td>少し開いて中をうかがう様子</td>
+<td>★★☆</td>
+<td>室内から外を撮る逆方向でも可（AI合成との組み合わせ）</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>地面・アスファルト</td>
+<td>職人の足元がドカドカ歩くカット</td>
+<td>★★☆</td>
+<td>足だけのアップ。顔は映さない</td>
+</tr>
+<tr>
+<td>2-4</td>
+<td>現場内で横になる人の手・足元</td>
+<td>寝転がっている雰囲気の一部</td>
+<td>★☆☆</td>
+<td>顔を映さずに「寝ている」感を出すカット</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 3　準備音・7:30用インサート（★★★多め）</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3-1</td>
+<td>時計（7:00表示）</td>
+<td>台本変更提案6の追加カット</td>
+<td>★★★</td>
+<td>アナログ時計推奨。針のアップ。3枚（7:00/7:15/7:30）撮る</td>
+</tr>
+<tr>
+<td>3-2</td>
+<td>時計（7:15表示）</td>
+<td>時間経過を示す</td>
+<td>★★★</td>
+<td>同じ時計・同じ構図で撮ること</td>
+</tr>
+<tr>
+<td>3-3</td>
+<td>時計（7:30表示）</td>
+<td>作業開始時刻</td>
+<td>★★★</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>工具箱を置く瞬間</td>
+<td>金属音が鳴る動作</td>
+<td>★★★</td>
+<td>床または地面に置く瞬間のアップ</td>
+</tr>
+<tr>
+<td>3-5</td>
+<td>電動工具（グラインダー等）</td>
+<td>動かす前の静止状態</td>
+<td>★★☆</td>
+<td>電源は入れない。構えの雰囲気だけ</td>
+</tr>
+<tr>
+<td>3-6</td>
+<td>資材を引きずる足元・手</td>
+<td>引きずる動作のクローズアップ</td>
+<td>★★☆</td>
+<td>音素材とセットで使う</td>
+</tr>
+<tr>
+<td>3-7</td>
+<td>室内の時計（住民視点）</td>
+<td>7:30を示す時計を住民が見ている手元</td>
+<td>★★☆</td>
+<td>AI生成またはカーテン越し演出と組み合わせ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 4　朝礼用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4-1</td>
+<td>朝礼ホワイトボード・黒板</td>
+<td>作業内容・注意事項が書かれたもの</td>
+<td>★★☆</td>
+<td>「音・粉じん・臭い・言葉遣い」などの文字が入ると良い</td>
+</tr>
+<tr>
+<td>4-2</td>
+<td>ヘルメットを被る手元</td>
+<td>朝礼開始前の準備</td>
+<td>★☆☆</td>
+<td>手元と顔のつなぎカットに使える</td>
+</tr>
+<tr>
+<td>4-3</td>
+<td>安全ベストの社名・ロゴ</td>
+<td>元請けと協力会社の区別感</td>
+<td>★☆☆</td>
+<td>近くに並んでいる状態で撮ると「共に働く」感が出る</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 5　現場トイレ用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5-1</td>
+<td>仮設トイレと隣家の窓</td>
+<td>距離感が分かる構図</td>
+<td>★★★</td>
+<td>トイレと窓の両方が同フレームに入るアングル</td>
+</tr>
+<tr>
+<td>5-2</td>
+<td>トイレの扉・鍵部分</td>
+<td>清潔感・管理状態のアップ</td>
+<td>★☆☆</td>
+<td>「清潔に保たれている」か「汚れている」か選んで撮影</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 6　洗濯物・切断作業用インサート（最重要シーン）</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6-1</td>
+<td>洗濯物（ベランダ）</td>
+<td>干されたシャツ・タオルなど</td>
+<td>★★★</td>
+<td>風で揺れていると良い。切断機と同フレームが理想</td>
+</tr>
+<tr>
+<td>6-2</td>
+<td>切断機（グラインダー等）のアップ</td>
+<td>刃の部分・火花のイメージ</td>
+<td>★★★</td>
+<td>実際に動かさなくてよい。静止状態のアップ</td>
+</tr>
+<tr>
+<td>6-3</td>
+<td>洗濯物＋切断機が同フレーム</td>
+<td>「近さ」が伝わる構図</td>
+<td>★★★</td>
+<td>シーン12のハイライト用としても使う重要カット</td>
+</tr>
+<tr>
+<td>6-4</td>
+<td>空中に舞う粉じん（白い粉）</td>
+<td>切断作業の粉じんのイメージ</td>
+<td>★★☆</td>
+<td>小麦粉を使った代替演出も可。逆光で撮ると映える</td>
+</tr>
+<tr>
+<td>6-5</td>
+<td>洗濯物に付いた汚れ</td>
+<td>ビフォー・アフターイメージ</td>
+<td>★☆☆</td>
+<td>実際の汚れは使わず、別素材で演出</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 7　休憩・喫煙用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7-1</td>
+<td>たばこ（取り出す手元）</td>
+<td>火をつけようとする仕草</td>
+<td>★★★</td>
+<td>台本変更により「煙なし」「仕草のみ」で撮影</td>
+</tr>
+<tr>
+<td>7-2</td>
+<td>窓が閉まる瞬間</td>
+<td>住民が窓を閉める動作</td>
+<td>★★★</td>
+<td>手元のアップ。AI合成との組み合わせ前提</td>
+</tr>
+<tr>
+<td>7-3</td>
+<td>道路に座った足元・飲み物</td>
+<td>道路休憩のイメージカット</td>
+<td>★★☆</td>
+<td>地面からのローアングル。車道と縁石が見えると良い</td>
+</tr>
+<tr>
+<td>7-4</td>
+<td>通行人の足が避ける様子</td>
+<td>道を避けて歩く足元</td>
+<td>★★☆</td>
+<td>足元だけのカット。顔不要</td>
+</tr>
+<tr>
+<td>7-5</td>
+<td>だらしない服装の腰元</td>
+<td>腰パン・シャツ出しのイメージ</td>
+<td>★☆☆</td>
+<td>顔は映さずウエスト周りのみ</td>
+</tr>
+<tr>
+<td>7-6</td>
+<td>フリー素材の煙映像</td>
+<td>Pixabay等から差し込む</td>
+<td>★★★</td>
+<td>撮影不要（素材調達）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 8　通行人対応用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8-1</td>
+<td>通路を塞ぐ資材</td>
+<td>道路が狭くなっている状態</td>
+<td>★★★</td>
+<td>上から俯瞰か、通行人視点で撮る</td>
+</tr>
+<tr>
+<td>8-2</td>
+<td>案内する手（手振り）</td>
+<td>「こちらへどうぞ」の手元</td>
+<td>★★☆</td>
+<td>顔より手が主役。手袋着用の手が現場らしい</td>
+</tr>
+<tr>
+<td>8-3</td>
+<td>通行人の表情（困った顔）</td>
+<td>立ち止まって困る様子</td>
+<td>★☆☆</td>
+<td>エキストラ（通行人役）が撮れる時間帯に合わせて</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 9　言葉遣い・乱暴な態度用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9-1</td>
+<td>資材を叩きつける手元・床</td>
+<td>台本変更後の「資材を叩きつける」カット</td>
+<td>★★★</td>
+<td>音が重要。スマートフォンを近くに置いて別収録すると良い</td>
+</tr>
+<tr>
+<td>9-2</td>
+<td>山本が身を引く足元</td>
+<td>驚いて下がる動作</td>
+<td>★★☆</td>
+<td>足元だけで「驚き」を表現</td>
+</tr>
+<tr>
+<td>9-3</td>
+<td>近隣住民が振り返る（遠景）</td>
+<td>AI生成または後ろ姿で対応</td>
+<td>★★☆</td>
+<td>顔が映らない構図で</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 10　近隣対応後の陰口用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10-1</td>
+<td>住民が立ち去る背中</td>
+<td>去っていく後ろ姿</td>
+<td>★★★</td>
+<td>「聞こえてしまった」の前後で使う重要カット</td>
+</tr>
+<tr>
+<td>10-2</td>
+<td>佐藤がお辞儀する姿</td>
+<td>深く頭を下げる動作</td>
+<td>★★★</td>
+<td>シーン12のハイライトでも再利用する</td>
+</tr>
+<tr>
+<td>10-3</td>
+<td>住民の表情が曇る（横顔）</td>
+<td>陰口を聞いてしまった瞬間</td>
+<td>★★☆</td>
+<td>顔を見せるかどうかはキャスト判断</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 11　道路清掃用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11-1</td>
+<td>泥が残った道路（清掃前）</td>
+<td>土・泥・粉じんが残っている状態</td>
+<td>★★★</td>
+<td>車のタイヤ跡が入るとリアル</td>
+</tr>
+<tr>
+<td>11-2</td>
+<td>ほうきで掃く手元・足元</td>
+<td>清掃の動作アップ</td>
+<td>★★★</td>
+<td>ゆっくりした丁寧な動きで撮影</td>
+</tr>
+<tr>
+<td>11-3</td>
+<td>清掃後の道路</td>
+<td>清潔になった路面</td>
+<td>★★★</td>
+<td>11-1と同アングルで撮るとビフォーアフター比較に使える</td>
+</tr>
+<tr>
+<td>11-4</td>
+<td>資材が整理された状態</td>
+<td>片付いた資材置き場</td>
+<td>★★☆</td>
+<td>整然と並んだ状態をローアングルで</td>
+</tr>
+<tr>
+<td>11-5</td>
+<td>時計（終業時刻）</td>
+<td>例：17:00〜17:30を示す時計</td>
+<td>★★☆</td>
+<td>シーン3の時計と同じ時計を使う</td>
+</tr>
+<tr>
+<td>11-6</td>
+<td>夕暮れの空と現場</td>
+<td>作業終了後の現場の静けさ</td>
+<td>★☆☆</td>
+<td>ゴールデンアワーに撮れれば理想</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>シーン 12　エンディング用インサート</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>内容</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12-1</td>
+<td>清掃された道路（再撮り）</td>
+<td>終わった後の道路の静けさ</td>
+<td>★★★</td>
+<td>夕日が当たる時間帯ならゴールデンアワー効果あり</td>
+</tr>
+<tr>
+<td>12-2</td>
+<td>会釈する手・頭の動き</td>
+<td>通行人へ軽く頭を下げる山本</td>
+<td>★★☆</td>
+<td>ナレーションと連動するカット</td>
+</tr>
+<tr>
+<td>12-3</td>
+<td>住民が安心して通り過ぎる背中</td>
+<td>AI生成または後ろ姿</td>
+<td>★★☆</td>
+<td>エンディングのあたたかい空気感を表すカット</td>
+</tr>
+<tr>
+<td>12-4</td>
+<td>仮囲いと夕空</td>
+<td>作業が終わった静かな現場</td>
+<td>★☆☆</td>
+<td>ゴールデンアワー推奨</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>汎用インサート（どのシーンでも使い回せるカット）</h2>
+<p>これらは撮影日に余裕があれば積極的に撮っておく。編集で穴が空いた時の「保険カット」になる。</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>被写体</th>
+<th>用途</th>
+<th>優先度</th>
+<th>撮影メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G-1</td>
+<td>ヘルメットのアップ</td>
+<td>つなぎ・場面転換</td>
+<td>★★★</td>
+<td>地面に置いた状態。被る瞬間も撮る</td>
+</tr>
+<tr>
+<td>G-2</td>
+<td>安全靴・作業靴のアップ</td>
+<td>職人の存在感</td>
+<td>★★★</td>
+<td>歩く・止まる・踏み出す動作を複数パターン</td>
+</tr>
+<tr>
+<td>G-3</td>
+<td>作業手袋を着ける手元</td>
+<td>仕事始まりのイメージ</td>
+<td>★★☆</td>
+<td>指を差し込む動作スローで</td>
+</tr>
+<tr>
+<td>G-4</td>
+<td>工具類のアップ（複数）</td>
+<td>現場らしさの補強</td>
+<td>★★☆</td>
+<td>ドライバー・スパナ・メジャー等</td>
+</tr>
+<tr>
+<td>G-5</td>
+<td>現場サインボード</td>
+<td>会社名・作業内容の掲示</td>
+<td>★★☆</td>
+<td>本物の掲示板をそのまま撮る</td>
+</tr>
+<tr>
+<td>G-6</td>
+<td>青空と足場</td>
+<td>現場のシンボルカット</td>
+<td>★☆☆</td>
+<td>真下から見上げる構図</td>
+</tr>
+<tr>
+<td>G-7</td>
+<td>職人の背中（歩く）</td>
+<td>主人公感を出すカット</td>
+<td>★★☆</td>
+<td>山本役の後ろ姿。ゆっくり歩くテイクで</td>
+</tr>
+<tr>
+<td>G-8</td>
+<td>壁・床・柱の作業跡</td>
+<td>「仕事の証拠」</td>
+<td>★☆☆</td>
+<td>施工中の素材感。クローズアップ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>撮影時の共通注意事項</h2>
+<ul>
+<li><strong>スマートフォンのデジタルズームは使用禁止</strong>。被写体に寄ってから光学撮影する</li>
+<li>インサートカットは<strong>横向き（ランドスケープ）</strong>で統一する</li>
+<li>同じ被写体を<strong>複数テイク・複数アングル</strong>で撮っておく（編集での選択肢が増える）</li>
+<li><strong>スローモーション（1/4速以下）</strong>で撮れるものはスローで撮っておく（通常速にも使えるため）</li>
+<li>音声込みで重要なカット（資材を叩きつける音など）は<strong>ボイスメモを別収録</strong>すること</li>
+<li>★★★カットは<strong>1日目の午前中に必ず撮影</strong>し、素材確保を優先する</li>
+</ul>
+<hr />
+<h2>インサート素材の調達が必要なもの</h2>
+<table>
+<thead>
+<tr>
+<th>素材</th>
+<th>調達先</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>煙の映像（シーン7）</td>
+<td>Pixabay / Pexels（無料）</td>
+<td>白煙・横に流れるものを選ぶ</td>
+</tr>
+<tr>
+<td>AI生成動画（近隣住民・子ども）</td>
+<td>Runway Gen-4 / Kling AI</td>
+<td>別途プロンプト設計が必要</td>
+</tr>
+<tr>
+<td>BGM・環境音</td>
+<td>Pixabay Audio / FreeSFX</td>
+<td>朝の住宅地の環境音、工具音</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

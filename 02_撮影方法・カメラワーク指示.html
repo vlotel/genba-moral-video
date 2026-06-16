@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>撮影方法・カメラワーク指示｜現場モラル動画</title>
+
+<style>
+  :root {
+    --accent: #e8a020;
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --muted: #666;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 0 60px;
+  }
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  header a { color: var(--accent); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  header h1 { font-size: 14px; font-weight: 600; flex: 1; }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1 { font-size: 1.5em; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+  h2 { font-size: 1.2em; font-weight: 700; margin: 28px 0 10px; color: #1a1a1a; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.05em; font-weight: 700; margin: 20px 0 8px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 20px; }
+  li { margin: 4px 0; }
+  blockquote {
+    background: #fff8e8;
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    color: #555;
+    font-style: italic;
+  }
+  pre, code {
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+  code { background: #f0ede8; padding: 2px 5px; border-radius: 3px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.9em;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  th {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafafa; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+  input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--accent);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  .checklist li { list-style: none; margin-left: -20px; display: flex; align-items: flex-start; gap: 4px; padding: 3px 0; }
+  strong { color: #1a1a1a; }
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    header h1 { font-size: 12px; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; }
+  }
+</style>
+
+</head>
+<body>
+<header><a href="index.html">← 一覧へ</a><h1>撮影方法・カメラワーク指示</h1></header>
+<div class="content">
+<h1>撮影方法・カメラワーク指示書</h1>
+<h2>現場モラル動画「見られているのは、腕だけじゃない。」</h2>
+<hr />
+<h2>全体の演出方針</h2>
+<blockquote>
+<p><strong>キャスティングの前提（重要）：</strong> 近隣住民・子どもは<strong>AI生成動画で代用</strong>します。本書の「近隣住民の主観カット／反応カット」は原則すべて<strong>AI生成</strong>で対応し、現場では撮影しません（実キャストは立てません）。<br />
+例外は<strong>シーン10のみ</strong>：住民の<strong>後ろ姿・手元だけを実撮影</strong>し、顔はAIで差し替えます（B案）。AI合成のため、窓・背景・光の参考アングルだけは現場で押さえておくと精度が上がります。</p>
+</blockquote>
+<h3>トーン</h3>
+<ul>
+<li><strong>ドキュメンタリー風のリアリティ</strong>を基調とする</li>
+<li>説教くさく見えないよう、映像は「現場の日常」を自然に切り取る感覚</li>
+<li>テレビの企業研修ビデオのような固い雰囲気は避ける</li>
+<li>手持ちカメラと固定カメラを組み合わせ、臨場感を出す</li>
+</ul>
+<h3>カメラの基本設定（スマートフォン撮影）</h3>
+<p><strong>使用機材：スマートフォン</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>解像度</td>
+<td>4K（機種が対応していれば。対応外なら1080p）</td>
+</tr>
+<tr>
+<td>フレームレート</td>
+<td><strong>30fps推奨</strong>（スマートフォンで安定して撮れる標準設定）</td>
+</tr>
+<tr>
+<td>シャッタースピード</td>
+<td>撮影アプリで設定可能なら1/60（30fpsの場合）</td>
+</tr>
+<tr>
+<td>カラープロファイル</td>
+<td><strong>通常設定でOK</strong>（Logが使える機種はそれも可）</td>
+</tr>
+<tr>
+<td>ズーム</td>
+<td><strong>デジタルズームは使用禁止</strong>。画質劣化するため、足で近づく</td>
+</tr>
+<tr>
+<td>グリッド</td>
+<td><strong>オン</strong>にして水平・垂直を常に確認</td>
+</tr>
+</tbody>
+</table>
+<h4>撮影アプリ（推奨）</h4>
+<ul>
+<li><strong>iPhone：</strong> 標準カメラ（シンプルで安定）またはFilmic Pro（細かい設定が可能）</li>
+<li><strong>Android：</strong> 標準カメラまたはOpen Camera（シャッタースピード等を手動設定可能）</li>
+<li>標準カメラでも4K・グリッド設定は可能なのでまず標準で試す</li>
+</ul>
+<h4>スマートフォン撮影に必須の周辺機材</h4>
+<table>
+<thead>
+<tr>
+<th>機材</th>
+<th>目的</th>
+<th>優先度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>スマートフォン用ジンバル（DJI OM等）</td>
+<td>手持ち歩き撮影の安定化</td>
+<td><strong>必須</strong></td>
+</tr>
+<tr>
+<td>スマートフォン用三脚マウント</td>
+<td>固定撮影</td>
+<td><strong>必須</strong></td>
+</tr>
+<tr>
+<td>三脚</td>
+<td>固定カット全般</td>
+<td><strong>必須</strong></td>
+</tr>
+<tr>
+<td>外付けマイク（Lightning/USB-C対応）</td>
+<td>音質確保（内蔵マイクでは現場ノイズに負ける）</td>
+<td><strong>強く推奨</strong></td>
+</tr>
+<tr>
+<td>モバイルバッテリー</td>
+<td>長時間撮影でバッテリー切れ防止</td>
+<td><strong>必須</strong></td>
+</tr>
+<tr>
+<td>クリップ式広角レンズ</td>
+<td>引きのカットで画角を広げる</td>
+<td>あれば理想</td>
+</tr>
+<tr>
+<td>クリップ式NDフィルター</td>
+<td>屋外の露出調整</td>
+<td>あれば理想</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>重要：</strong> 内蔵マイクは風や現場ノイズを大きく拾います。会話シーンは特に外付けマイクか、近くに別のスマートフォンを設置してボイスメモで音声を収録する「二段収録」を強く推奨します。</p>
+</blockquote>
+<hr />
+<h2>シーン別カメラワーク指示</h2>
+<hr />
+<h3>シーン1：オープニング（0:00〜1:20）</h3>
+<p><strong>演出意図：</strong> 住宅地の「静かな朝の日常」を見せ、そこに工事現場が存在することの違和感を自然に示す。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>朝の静かな道路の空カット（人物なし）。木漏れ日や光が差す感じ</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>AI生成</strong></td>
+<td>遠くから登校する子ども（後ろ姿・遠景。<strong>AI生成で対応</strong>。現場が背景に入る構図をプロンプトで指定）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>住民が洗濯物を干すカット。2階ベランダからの目線と地上からの目線の2パターン</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定・望遠</td>
+<td>犬の散歩をする人。のどかな日常感</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>そのすぐ隣に工事現場がある全景カット。現場の存在感を出す</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定</td>
+<td>協力業者の車両が現場に入ってくるカット。静かな朝に車が入る対比</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 全て固定カメラで撮り、「静かな住宅地の日常」を強調する。工事現場が映り込む構図を意識すること。</p>
+<hr />
+<h3>シーン2：朝の現場到着（1:20〜2:40）</h3>
+<p><strong>演出意図：</strong> 作業前の「何気ない行動」が近隣にどう見えているかを対比で見せる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定</td>
+<td>車がドアを強く閉める瞬間（音を強調。サウンドデザインで後処理も可）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>手持ち・近接</td>
+<td>山本・鈴木の大声での会話。会話しながら歩くシーン。手持ちで距離感を出す</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定・低アングル</td>
+<td>鈴木が資材置き場付近で横になるカット。横になる姿を地面から見上げる感じで撮る</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民の視点：カーテン越しに現場を見る。カーテンを少し開けて覗く演出（<strong>AI生成で対応</strong>。現場の窓は参考アングルのみ撮影）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>田中が声をかけるシーン全体</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>田中→山本の会話。田中アップ・山本アップ交互</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 「D：近隣住民のカット」はAI生成で対応する。AIプロンプトでは「薄いカーテン越し・ピントを甘く・不安げな表情」を指定し、不安感を演出する。現場側では合成の下地として、住民宅の窓・カーテン越しの構図を人物なしで撮っておく。</p>
+<hr />
+<h3>シーン3：朝礼前・7時30分の準備音（2:40〜4:00）</h3>
+<p><strong>演出意図：</strong> 音の問題を視覚的にも表現する。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>クローズアップ</td>
+<td>時計が7:30を指しているカット。できれば実際の時計をCUで</td>
+</tr>
+<tr>
+<td>B</td>
+<td>固定</td>
+<td>工具箱が「ガン」と置かれる瞬間。音と映像を強調</td>
+</tr>
+<tr>
+<td>C</td>
+<td>手持ち・追い</td>
+<td>資材を引きずる職人の手元から足元へパン</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>AI生成</strong></td>
+<td>住民が室内で時計を見ながら現場の音に気づく（<strong>AI生成で対応</strong>）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>田中が気づいて止めるシーン</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>佐藤が加わる3者の会話シーン</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 音の存在感を映像で表現するため、工具を置く瞬間・資材を動かす手元は<strong>クローズアップで強調</strong>すること。</p>
+<hr />
+<h3>シーン4：朝礼（4:00〜5:00）</h3>
+<p><strong>演出意図：</strong> チームとして現場に入る意識の高揚感を出す。教訓的にならないよう、現場の雰囲気を大切に。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>全員が集まった朝礼の全体カット</td>
+</tr>
+<tr>
+<td>B</td>
+<td>固定・正面やや下から</td>
+<td>佐藤がスピーチするカット。リーダーとしての貫禄を出す</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>聞いている職人たちの表情カット（山本・鈴木それぞれ）</td>
+</tr>
+<tr>
+<td>D</td>
+<td>切り返し</td>
+<td>田中→山本の会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 佐藤のスピーチカットは「やや下から」撮ることで自然なリーダー感が出る。説教感にならないよう、佐藤の表情は<strong>穏やかに、しかし真剣に</strong>。</p>
+<hr />
+<h3>シーン5：現場トイレ・設備配置（5:00〜6:00）</h3>
+<p><strong>演出意図：</strong> 普段意識しない「設備の位置」への気づきをさりげなく描く。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>現場トイレと近隣住宅の窓が同フレームに入る構図</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民が窓から見て不快そうな表情。窓越しに現場が映り込む（<strong>AI生成で対応</strong>）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>山本・鈴木が気づいて話す場面</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定</td>
+<td>田中が佐藤に報告する会話</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>シーン6：洗濯物の近くでの切断作業（6:00〜7:45）</h3>
+<p><strong>演出意図：</strong> 「職人側の論理」と「住民側の感覚」の対比を映像で明確に見せる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>隣家の洗濯物と切断機が同フレームに入る全体カット（最重要カット）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>クローズアップ</td>
+<td>洗濯物のアップ（生活感を強調）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>山本・鈴木が切断機を準備するカット</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>主観カット</strong></td>
+<td>住民の視点：ベランダから洗濯物越しに切断作業を見る</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>田中が止めるカット</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>田中→山本→鈴木→佐藤の4者会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 「A：洗濯物と切断機が同フレーム」のカットが核心。<strong>広角レンズで両方を同時に収める</strong>こと。住民の主観カットは洗濯物をフォアグラウンドに入れ、奥で切断機を準備する職人が見える構図で。</p>
+<hr />
+<h3>シーン7：15時休憩（7:45〜9:15）</h3>
+<p><strong>演出意図：</strong> 休憩中の姿が周囲にどう見えるかを多角的に見せる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>道路脇に座っている職人たちの全体カット</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>通行人の主観</strong></td>
+<td>歩いてきたら職人が道路に座っている。歩きながらの手持ちカメラで進行感を出す</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>通行人が避けて歩くカット。職人たちは画面の端に座っている</td>
+</tr>
+<tr>
+<td>D</td>
+<td>クローズアップ</td>
+<td>鈴木がたばこを取り出し、火をつけようとする手元（<strong>現場では火はつけない・煙は出さない</strong>）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>合成素材</td>
+<td>たばこの煙が住宅側に流れる映像（<strong>フリー素材を合成。現場では煙を出さない</strong> ── CLAUDE.md 決定済み）</td>
+</tr>
+<tr>
+<td>F</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民が窓を閉める。窓を閉める手元のアップ（<strong>AI生成で対応</strong>）</td>
+</tr>
+<tr>
+<td>G</td>
+<td>固定・引き</td>
+<td>田中が声をかけるシーン。休憩組の全体＋田中</td>
+</tr>
+<tr>
+<td>H</td>
+<td>切り返し</td>
+<td>田中・佐藤・山本・鈴木の会話（4者なので効率よく切り返し）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 夏場を想定しているため、実際に暑い日に撮影すると自然な「だらしない格好」の演出がしやすい。ただし<strong>キャスト・スタッフの健康管理に最大限配慮すること</strong>。</p>
+<hr />
+<h3>シーン8：通行人への対応（9:15〜10:45）</h3>
+<p><strong>演出意図：</strong> 「不十分な対応」と「丁寧な対応」の差を映像で際立たせる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>資材で通路が狭くなった状態の道路</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>通行人の視点・手持ち</strong></td>
+<td>進んできたら通れなくなる緊張感</td>
+</tr>
+<tr>
+<td>C</td>
+<td>切り返し</td>
+<td>通行人⇔山本の不十分なやりとり</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定・表情CU</td>
+<td>通行人が困った表情をするカット</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>田中が入ってきて丁寧に誘導するカット</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定</td>
+<td>通行人が「ありがとうございます」と去っていくカット</td>
+</tr>
+<tr>
+<td>G</td>
+<td>切り返し</td>
+<td>田中→山本の指導会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 通行人の視点カット（B）は<strong>手持ちカメラで歩きながら撮影</strong>して、通路が狭くなる不安感を出すこと。</p>
+<hr />
+<h3>シーン9：現場内の言葉遣い・乱暴な態度（10:45〜12:10）</h3>
+<p><strong>演出意図：</strong> 現場内の雰囲気が外にどう漏れ出るかを見せる。暴力的な映像にならないよう注意。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>手持ち・近接</td>
+<td>鈴木が怒鳴る会話シーン。手持ちで臨場感を出す</td>
+</tr>
+<tr>
+<td>B</td>
+<td>クローズアップ</td>
+<td>山本の萎縮した表情</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>鈴木が資材を山本の足元近くに乱暴に叩きつける動き（音を強調）</td>
+</tr>
+<tr>
+<td>D</td>
+<td>固定</td>
+<td>山本が驚いて身を引く動作（<strong>身体接触はなし</strong> ── CLAUDE.md 決定済み変更）</td>
+</tr>
+<tr>
+<td>E</td>
+<td><strong>AI生成</strong></td>
+<td>住民が現場の様子を見て驚く。表情のアップ（<strong>AI生成で対応</strong>。実撮影する場合は後ろ姿のみ）</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定</td>
+<td>田中が作業を止める</td>
+</tr>
+<tr>
+<td>G</td>
+<td>切り返し</td>
+<td>田中→鈴木の指導会話</td>
+</tr>
+<tr>
+<td>H</td>
+<td>固定</td>
+<td>鈴木が山本に向き直って謝るカット（関係の修復を示す）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重要注意：</strong> 身体接触は行わない（CLAUDE.md 決定済み変更）。威圧感は<strong>資材を叩きつける音＋山本が身を引く動作</strong>で演出する。叩きつけ音はスマートフォンを近くに置いてボイスメモで別収録しておくと迫力が増す。キャスト同士で事前に動作と立ち位置を確認すること。</p>
+<hr />
+<h3>シーン10：近隣から注意を受けた後の対応（12:10〜13:20）</h3>
+<p><strong>演出意図：</strong> 「受け止め方」と「その後の言動」の両方が見られていることを描く。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>住民が佐藤に話しかけるシーン全体（<strong>住民は後ろ姿</strong>で配置）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>切り返し</td>
+<td>住民⇔佐藤の会話。<strong>佐藤側のみ正面で撮影</strong>し、誠実な表情を強調。住民は後ろ姿・手元。住民の顔・声はAIで合成</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定・引き</td>
+<td>少し離れた場所での山本・鈴木の小声の会話</td>
+</tr>
+<tr>
+<td>D</td>
+<td>後ろ姿＋AI合成</td>
+<td>まだ近くにいた住民にその言葉が聞こえてしまう。<strong>後ろ姿で撮影し、曇る表情はAI顔合成</strong>で見せる</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>田中が気づいてすぐ動くカット</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切り返し</td>
+<td>田中→山本→鈴木の会話</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント（B案）：</strong> 住民は<strong>実キャストの後ろ姿・手元のみ実撮影</strong>し、顔と声はAIで差し替える。撮影時は①佐藤の切り返しを単独で成立させる構図、②後ろ姿の住民が佐藤と同フレームに入る引き、の両方を押さえる。AI差し替えを前提に、住民の頭の高さ・髪・服装をAI生成側と合わせておくこと。会話の間合い（お辞儀のタイミング等）は佐藤側で完結させると編集が楽。</p>
+<hr />
+<h3>シーン11：夕方・道路清掃と終業（13:20〜14:35）</h3>
+<p><strong>演出意図：</strong> 「最後まで丁寧に」というメッセージを視覚的に気持ちよく終わらせる。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>道路に土・泥が残っている状態（セッティング必要）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>クローズアップ</td>
+<td>泥の状態の地面アップ</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>山本・鈴木がさぼろうとする会話</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>通行人の視点</strong></td>
+<td>汚れた道路を避けて歩く通行人</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定</td>
+<td>田中・佐藤の指導会話</td>
+</tr>
+<tr>
+<td>F</td>
+<td>固定・引き</td>
+<td>全員でホウキを持って清掃するカット（達成感のある画）</td>
+</tr>
+<tr>
+<td>G</td>
+<td>クローズアップ</td>
+<td>山本が自ら気づいて「こっちも」と声をかける表情</td>
+</tr>
+<tr>
+<td>H</td>
+<td>固定</td>
+<td>清掃後のきれいな道路カット。Before/Afterの対比として使える</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>シーン12：エンディング（14:35〜15:00）</h3>
+<p><strong>演出意図：</strong> 1日を通じた学びの集大成。希望感・温かさで締める。</p>
+<table>
+<thead>
+<tr>
+<th>カット</th>
+<th>カメラ</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>固定・引き</td>
+<td>清掃され整った現場の全景。夕方の光（ゴールデンアワー推奨）</td>
+</tr>
+<tr>
+<td>B</td>
+<td>固定</td>
+<td>職人たちが服装を整えて現場を後にする後ろ姿</td>
+</tr>
+<tr>
+<td>C</td>
+<td>固定</td>
+<td>山本が通行人に会釈する。通行人が微笑む</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>AI生成</strong></td>
+<td>近隣住民が安心した表情で通り過ぎる（後ろ姿／<strong>AI生成で対応</strong>）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>固定・引き</td>
+<td>誰もいなくなった現場の佇まい。タイトルテロップ用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント：</strong> 夕方の「ゴールデンアワー」（日没前のおよそ1時間）に撮影できると映像が格段に美しくなる。<strong>本作は2日間撮影</strong>のため、撮影2日目の最後（夕方）に組み込むこと。夏場で日没19時前後なら、ゴールデンアワーの本番は概ね18:00以降になる（17時台はまだ光が高いので、空カット中心の先撮りに充てるとよい）。</p>
+<hr />
+<h2>スマートフォン撮影の実践テクニック</h2>
+<h3>固定カットの撮り方</h3>
+<ul>
+<li>三脚＋マウントで固定し、画面のグリッドで水平を確認してから撮影開始</li>
+<li>録画ボタンを押してから2〜3秒待ってから演技開始（押した瞬間の揺れを避ける）</li>
+<li>同様に演技終了後も2〜3秒録画を続けてから停止</li>
+</ul>
+<h3>手持ちカットの撮り方</h3>
+<ul>
+<li><strong>ジンバルを使用する</strong>のが基本。通行人の主観カット・追いカットに活用</li>
+<li>ジンバルなしの手持ちは、わざと少し揺らして「リアル感」を出したい場合のみ（主観カット等）</li>
+<li>脇を締めて、膝を少し曲げながら歩くと揺れが減る</li>
+</ul>
+<h3>バッテリー管理</h3>
+<ul>
+<li><strong>各シーン撮影前にバッテリー残量を確認</strong></li>
+<li>60%を切ったらモバイルバッテリーを接続しながら撮影</li>
+<li>予備のスマートフォン（別の社員のもの等）を1台確保しておくと安心</li>
+</ul>
+<h3>複数台撮影（推奨）</h3>
+<ul>
+<li>スマートフォンが2〜3台あれば<strong>同時多台撮影</strong>が可能</li>
+<li>正面固定＋手持ちを同時に回すと、1テイクで複数のカットが取れる</li>
+<li>台数が多いほど撮り直しが減り、キャスト（社内の方）の負担が減る</li>
+</ul>
+<hr />
+<h2>音声・音響の方針</h2>
+<table>
+<thead>
+<tr>
+<th>シーン</th>
+<th>音声処理の指示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>車のドア音（シーン2）</td>
+<td>現場音＋編集でSE（効果音）を重ねて迫力を出す</td>
+</tr>
+<tr>
+<td>工具・資材音（シーン3）</td>
+<td>金属音は現場音がよく拾えていれば活かす。足りなければフリー素材のSEで補う</td>
+</tr>
+<tr>
+<td>ナレーション全般</td>
+<td><strong>静かな室内（会議室等）でスマートフォン収録</strong>でも可。口元30cm程度の距離で録る</td>
+</tr>
+<tr>
+<td>会話シーン</td>
+<td>外付けマイクを接続したスマートフォンを話者に近づけて録音。複数台あれば各自に1台</td>
+</tr>
+<tr>
+<td>エンディング</td>
+<td>音楽を重ねる（BGM選定は別途）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>スマートフォン音声の注意点：</strong> 現場の風音・工事音が大きい場合は、<strong>別の静かな場所でセリフだけ後録り（アフレコ）</strong> して映像に乗せる方法も有効です。口パクで演技→後日収録という手順で品質が上がります。</p>
+</blockquote>
+<hr />
+<h2>テロップ・編集の方針</h2>
+<ul>
+<li>テロップフォント：太めのゴシック体（メイリオ・Noto Sans等）</li>
+<li>テロップ色：白文字＋黒縁 または 黒文字＋白背景帯</li>
+<li>重要テロップは<strong>太字</strong>で強調</li>
+<li>章タイトルカードを各シーン冒頭に挿入（例：「2. 朝の現場到着」）</li>
+<li>章タイトルカード背景：現場の空カット＋テキストオーバーレイ</li>
+</ul>
+</div>
+</body>
+</html>

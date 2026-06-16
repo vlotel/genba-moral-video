@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>撮影スケジュール｜現場モラル動画</title>
+
+<style>
+  :root {
+    --accent: #e8a020;
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --muted: #666;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 0 60px;
+  }
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  header a { color: var(--accent); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  header h1 { font-size: 14px; font-weight: 600; flex: 1; }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1 { font-size: 1.5em; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+  h2 { font-size: 1.2em; font-weight: 700; margin: 28px 0 10px; color: #1a1a1a; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.05em; font-weight: 700; margin: 20px 0 8px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 20px; }
+  li { margin: 4px 0; }
+  blockquote {
+    background: #fff8e8;
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    color: #555;
+    font-style: italic;
+  }
+  pre, code {
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+  code { background: #f0ede8; padding: 2px 5px; border-radius: 3px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.9em;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  th {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafafa; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+  input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--accent);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  .checklist li { list-style: none; margin-left: -20px; display: flex; align-items: flex-start; gap: 4px; padding: 3px 0; }
+  strong { color: #1a1a1a; }
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    header h1 { font-size: 12px; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; }
+  }
+</style>
+
+</head>
+<body>
+<header><a href="index.html">← 一覧へ</a><h1>撮影スケジュール</h1></header>
+<div class="content">
+<h1>撮影スケジュール【2日間版】</h1>
+<h2>現場モラル動画「見られているのは、腕だけじゃない。」</h2>
+<hr />
+<h2>撮影概要</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完成尺</td>
+<td>約15分</td>
+</tr>
+<tr>
+<td>撮影日数</td>
+<td><strong>2日間</strong>（+ロケハン1日）</td>
+</tr>
+<tr>
+<td>撮影場所</td>
+<td>住宅地内の工事現場（確保済み）、周辺住宅街</td>
+</tr>
+<tr>
+<td>推奨撮影時期</td>
+<td>夏場を想定（シーン7の服装・喫煙シーンあり）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>事前準備日（撮影0日目）</h2>
+<h3>タスク</h3>
+<ul>
+<li>☐ 撮影現場の確認（車両の入り口・朝礼スペース・トイレ位置）</li>
+<li>☐ 周辺住宅の「洗濯物が見える位置」の確認</li>
+<li>☐ 近隣住民カット（窓・カーテン等）の<strong>AI合成用 参考アングルの確認</strong>（実キャストは立てない。窓の見え方・背景を撮っておくと合成精度が上がる）</li>
+<li>☐ シーン10用：住民の<strong>後ろ姿・手元のみ</strong>を演じる協力者の確保（顔はAIで差し替え）</li>
+<li>☐ 通行人が自然に通れる道路環境の確認</li>
+<li>☐ 機材リスト照合（スマートフォン全台・三脚・マイク・ジンバル）</li>
+<li>☐ 全スマートフォンの撮影設定統一（解像度・フレームレート）</li>
+<li>☐ 小道具・衣装の最終確認</li>
+</ul>
+<hr />
+<h2>撮影1日目（早朝〜夕方）— シーン1〜9</h2>
+<h3>目標シーン</h3>
+<ul>
+<li>シーン1：オープニング（0:00〜1:20）</li>
+<li>シーン2：朝の現場到着（1:20〜2:40）</li>
+<li>シーン3：朝礼前・7時30分の準備音（2:40〜4:00）</li>
+<li>シーン4：朝礼（4:00〜5:00）</li>
+<li>シーン5：現場トイレ・設備配置（5:00〜6:00）</li>
+<li>シーン6：洗濯物近くでの切断作業（6:00〜7:45）</li>
+<li>シーン7：15時休憩（7:45〜9:15）</li>
+<li>シーン8：通行人への対応（9:15〜10:45）</li>
+<li>シーン9：現場内の言葉遣い・乱暴な態度（10:45〜12:10）</li>
+</ul>
+<h3>スケジュール</h3>
+<table>
+<thead>
+<tr>
+<th>時刻</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5:30</td>
+<td>スタッフ・キャスト集合（現場近くの集合場所）</td>
+</tr>
+<tr>
+<td>5:45</td>
+<td>機材セッティング開始</td>
+</tr>
+<tr>
+<td><strong>6:00〜7:30</strong></td>
+<td><strong>【シーン1】オープニング映像</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・静かな道路の空カット（人物なし）</td>
+</tr>
+<tr>
+<td></td>
+<td>・住民が洗濯物を干すカット（後ろ姿／または<strong>AI生成</strong>。現場が背景に入る構図）</td>
+</tr>
+<tr>
+<td></td>
+<td>・犬の散歩をする人のカット（近くの方に依頼できれば）</td>
+</tr>
+<tr>
+<td></td>
+<td>・協力業者の車両が現場に入ってくるカット</td>
+</tr>
+<tr>
+<td></td>
+<td>※<strong>登校する子どもはAI生成</strong>で対応（現場では撮影しない）</td>
+</tr>
+<tr>
+<td><strong>7:00〜8:00</strong></td>
+<td><strong>【シーン2】朝の現場到着</strong> ※シーン1と撮影時間帯が重複</td>
+</tr>
+<tr>
+<td></td>
+<td>・車のドアを強く閉めるカット（音の強調）</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本・鈴木の大声での会話シーン</td>
+</tr>
+<tr>
+<td></td>
+<td>・鈴木が資材置き場付近で横になるカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・近隣住民がカーテン越しに見るカット（<strong>AI生成</strong>で対応）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中が声をかける会話シーン</td>
+</tr>
+<tr>
+<td><strong>7:30〜8:30</strong></td>
+<td><strong>【シーン3】朝礼前・準備音</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・時計が7:30を示すカット（小道具の時計）</td>
+</tr>
+<tr>
+<td></td>
+<td>・工具箱を「ガン」と置く音のカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・資材を引きずる手元〜足元のカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・近隣住民が室内で時計を見るカット（<strong>AI生成</strong>で対応）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中が止める会話シーン・佐藤が加わる会話シーン</td>
+</tr>
+<tr>
+<td>8:30〜9:00</td>
+<td>キャスト休憩・次シーン準備</td>
+</tr>
+<tr>
+<td></td>
+<td>※佐藤役・田中役はここから集合でもOK（7:30集合に変更可）</td>
+</tr>
+<tr>
+<td><strong>9:00〜10:00</strong></td>
+<td><strong>【シーン4】朝礼</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・全員が集まった朝礼の全体カット（引き）</td>
+</tr>
+<tr>
+<td></td>
+<td>・佐藤のスピーチカット（やや下から）</td>
+</tr>
+<tr>
+<td></td>
+<td>・職人たちの表情カット（山本・鈴木）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中→山本の会話カット</td>
+</tr>
+<tr>
+<td><strong>10:00〜10:30</strong></td>
+<td><strong>【シーン5】現場トイレ・設備配置</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・トイレと近隣住宅の窓が同フレームに入るカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・近隣住民が窓から不快そうな表情をするカット（<strong>AI生成</strong>で対応）</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本・鈴木が気づく会話シーン</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中が佐藤に報告する会話シーン</td>
+</tr>
+<tr>
+<td><strong>10:30〜12:00</strong></td>
+<td><strong>【シーン6】洗濯物近くでの切断作業</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・洗濯物と切断機が同フレームに入るカット（最重要）</td>
+</tr>
+<tr>
+<td></td>
+<td>・住民の視点：洗濯物越しに切断機が見えるカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中が止める会話シーン・佐藤が加わる会話シーン</td>
+</tr>
+<tr>
+<td>12:00〜13:00</td>
+<td>昼食休憩</td>
+</tr>
+<tr>
+<td><strong>13:00〜14:30</strong></td>
+<td><strong>【シーン7】15時休憩（午後に撮影・光の条件は問わない）</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・道路脇に腰を下ろす山本・鈴木のカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・通行人が避けながら歩くカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・鈴木がたばこを取り出す仕草のカット（火はつけない）</td>
+</tr>
+<tr>
+<td></td>
+<td>・近隣住民が窓を閉めるカット（<strong>AI生成</strong>で対応）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中・佐藤の指導会話シーン</td>
+</tr>
+<tr>
+<td><strong>14:30〜16:00</strong></td>
+<td><strong>【シーン8】通行人への対応</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・資材で道路が狭くなっている状態のカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・通行人が立ち止まるカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本が対応に困るカット（焦った表情）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中が丁寧に案内するカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中→山本の指導会話シーン</td>
+</tr>
+<tr>
+<td><strong>16:00〜17:30</strong></td>
+<td><strong>【シーン9】言葉遣い・乱暴な態度</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・鈴木が怒鳴る会話シーン（手持ちカメラ）</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本が萎縮する表情のクローズアップ</td>
+</tr>
+<tr>
+<td></td>
+<td>・資材を乱暴に置くカット（音を強調）</td>
+</tr>
+<tr>
+<td></td>
+<td>・近隣住民が驚いて振り返るカット（後ろ姿／<strong>AI生成</strong>で対応）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中が止める会話シーン</td>
+</tr>
+<tr>
+<td></td>
+<td>・鈴木が山本に向き直って謝るカット</td>
+</tr>
+<tr>
+<td>17:30</td>
+<td>1日目終了・データバックアップ</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>1日目の注意：</strong> 早朝5:30集合〜17:30終了と長時間になります。シーン2・3は山本役・鈴木役のみ出演のため、佐藤役・田中役は7:30集合に変更可能です。全員に無理のないペースで進めてください。</p>
+</blockquote>
+<hr />
+<h2>撮影2日目（午前〜ゴールデンアワー）— シーン10〜12</h2>
+<h3>目標シーン</h3>
+<ul>
+<li>シーン10：近隣から注意を受けた後の対応（12:10〜13:20）</li>
+<li>シーン11：夕方・道路清掃と作業終了時間（13:20〜14:35）</li>
+<li>シーン12：エンディング（14:35〜15:00）</li>
+<li>補完カット：1日目のNGカット再撮・オープニング追加映像</li>
+</ul>
+<h3>スケジュール</h3>
+<table>
+<thead>
+<tr>
+<th>時刻</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9:00</td>
+<td>スタッフ・キャスト集合</td>
+</tr>
+<tr>
+<td>9:15</td>
+<td>機材セッティング</td>
+</tr>
+<tr>
+<td><strong>9:30〜11:00</strong></td>
+<td><strong>【シーン10】近隣クレーム対応</strong>（※B案：住民は<strong>後ろ姿・手元のみ撮影し、顔はAIで差し替え</strong>）</td>
+</tr>
+<tr>
+<td></td>
+<td>・住民が佐藤に話しかけるカット（<strong>住民は後ろ姿</strong>・佐藤は正面。会話音声は別途AI住民の口元に合わせて編集）</td>
+</tr>
+<tr>
+<td></td>
+<td>・佐藤の誠実な対応カット（深いお辞儀）</td>
+</tr>
+<tr>
+<td></td>
+<td>・少し離れた場所で山本・鈴木が小声で話すカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・住民にその言葉が聞こえてしまうカット（住民は後ろ姿／曇る表情はAI顔合成）</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中がすぐ気づいて動くカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中→山本→鈴木の会話シーン</td>
+</tr>
+<tr>
+<td>11:00〜12:00</td>
+<td>昼食休憩</td>
+</tr>
+<tr>
+<td><strong>12:00〜14:00</strong></td>
+<td><strong>【シーン11】夕方・道路清掃</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・道路に土・泥が残っている状態のセッティング（土を散布）</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本・鈴木がさぼろうとするカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・通行人が汚れた道路を避けるカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・田中・佐藤の指導会話</td>
+</tr>
+<tr>
+<td></td>
+<td>・全員でホウキを持って清掃するカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本が自ら「こっちも」と声かけするカット（山場）</td>
+</tr>
+<tr>
+<td></td>
+<td>・鈴木が「一人前だな」と褒めるカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・清掃後のきれいな道路カット</td>
+</tr>
+<tr>
+<td><strong>14:00〜17:00</strong></td>
+<td><strong>【シーン12】エンディング（ゴールデンアワー狙い）</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>・清掃後の整った現場の全景カット</td>
+</tr>
+<tr>
+<td></td>
+<td>・職人たちが服装を整えて現場を後にする後ろ姿</td>
+</tr>
+<tr>
+<td></td>
+<td>・山本が通行人に会釈するカット</td>
+</tr>
+<tr>
+<td></td>
+<td>・近隣住民が安心した表情で通り過ぎるカット（後ろ姿／<strong>AI生成</strong>で対応）</td>
+</tr>
+<tr>
+<td></td>
+<td>・タイトルテロップ用の静かな現場の空カット</td>
+</tr>
+<tr>
+<td>17:00〜17:30</td>
+<td>1日目のNGカット補完・再撮</td>
+</tr>
+<tr>
+<td>17:30</td>
+<td>全撮影終了・データバックアップ</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>ゴールデンアワーの確認：</strong> エンディングの現場空カットは日没前のおよそ1時間（ゴールデンアワー）が映像的に美しくなります。撮影2日目の日没時刻を事前に確認し、逆算して撮影順を調整してください。夏場の日没が19時前後なら、ゴールデンアワーの本番は概ね18:00以降です。17:00〜18:00はまだ光が高いため、会話カットや段取りを先に終わらせ、18:00前後に空カット・後ろ姿カットを集中して撮るのが理想です。</p>
+</blockquote>
+<hr />
+<h2>キャスト出演時間の目安</h2>
+<table>
+<thead>
+<tr>
+<th>キャスト</th>
+<th>1日目</th>
+<th>2日目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>山本役</td>
+<td>5:30〜17:30（全日）</td>
+<td>9:00〜17:30</td>
+</tr>
+<tr>
+<td>鈴木役</td>
+<td>5:30〜17:30（全日）</td>
+<td>9:00〜17:30</td>
+</tr>
+<tr>
+<td>田中役</td>
+<td><strong>7:30〜17:30</strong>（シーン4以降）</td>
+<td>9:00〜17:30</td>
+</tr>
+<tr>
+<td>佐藤役</td>
+<td><strong>7:30〜17:30</strong>（シーン4以降）</td>
+<td>9:00〜17:30</td>
+</tr>
+<tr>
+<td>近隣住民役</td>
+<td><strong>AI生成のため出演なし</strong></td>
+<td><strong>シーン10の後ろ姿撮影のみ 9:30〜10:30</strong>（顔はAI差し替え）</td>
+</tr>
+<tr>
+<td>子ども役</td>
+<td><strong>AI生成のため出演なし</strong></td>
+<td>―</td>
+</tr>
+<tr>
+<td>通行人役</td>
+<td>13:00〜16:00（断続的）</td>
+<td>12:00〜15:00</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>天候・トラブル時の対処</h2>
+<table>
+<thead>
+<tr>
+<th>状況</th>
+<th>対処</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1日目が雨（朝）</td>
+<td>早朝シーン（1・2・3）を翌日午前に移動し、日程を3日に延ばす</td>
+</tr>
+<tr>
+<td>ゴールデンアワーに曇り</td>
+<td>翌日リベンジ or LED照明で暖色に演出</td>
+</tr>
+<tr>
+<td>NGカットが多い場合</td>
+<td>2日目のシーン12前の「補完時間」を最大2時間使う</td>
+</tr>
+<tr>
+<td>社内キャストがセリフを忘れた</td>
+<td>分割して撮影し編集でつなぐ。カンペをカメラの下に置く</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>撮影に必要な小道具リスト</h2>
+<table>
+<thead>
+<tr>
+<th>カテゴリ</th>
+<th>必要品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>現場小道具</td>
+<td>工具箱、切断機（グラインダー等・非稼働）、ホウキ・ちりとり、バリケード・カラーコーン</td>
+</tr>
+<tr>
+<td>セッティング用</td>
+<td>汚し用の土・砂（道路清掃シーン用）</td>
+</tr>
+<tr>
+<td>衣装（職人）</td>
+<td>作業着一式×人数分（使い込んだ感じのもの）、ヘルメット、安全靴</td>
+</tr>
+<tr>
+<td>衣装（監督）</td>
+<td>清潔な作業着、ヘルメット（色違い推奨）</td>
+</tr>
+<tr>
+<td>衣装（近隣住民）</td>
+<td>シーン10の<strong>後ろ姿撮影用のみ</strong>（普段着・エプロン等）。他シーンはAI生成のため不要</td>
+</tr>
+<tr>
+<td>衣装（通行人）</td>
+<td>複数パターンの普段着</td>
+</tr>
+<tr>
+<td>その他</td>
+<td>飲み物（ペットボトル）×人数分、たばこ（火なし演技用）、壁掛け時計（7:30表示用）、洗濯物（ベランダ用）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>撮影スタッフ最小構成</h2>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>人数</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>監督（演出）</td>
+<td>1名</td>
+<td>キャスト兼任でも可</td>
+</tr>
+<tr>
+<td>カメラ担当</td>
+<td>1〜2名</td>
+<td>スマートフォン複数台を同時運用</td>
+</tr>
+<tr>
+<td>音声担当</td>
+<td>1名</td>
+<td>外付けマイク管理</td>
+</tr>
+<tr>
+<td>記録（スクリプター）</td>
+<td>1名</td>
+<td>カット番号・NGカット管理</td>
+</tr>
+<tr>
+<td>現場コーディネーター</td>
+<td>1名</td>
+<td>通行人誘導・近隣対応</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

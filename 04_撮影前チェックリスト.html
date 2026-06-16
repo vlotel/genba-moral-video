@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>撮影前チェックリスト｜現場モラル動画</title>
+
+<style>
+  :root {
+    --accent: #e8a020;
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --muted: #666;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 0 60px;
+  }
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  header a { color: var(--accent); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  header h1 { font-size: 14px; font-weight: 600; flex: 1; }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1 { font-size: 1.5em; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+  h2 { font-size: 1.2em; font-weight: 700; margin: 28px 0 10px; color: #1a1a1a; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.05em; font-weight: 700; margin: 20px 0 8px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 20px; }
+  li { margin: 4px 0; }
+  blockquote {
+    background: #fff8e8;
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    color: #555;
+    font-style: italic;
+  }
+  pre, code {
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+  code { background: #f0ede8; padding: 2px 5px; border-radius: 3px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.9em;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  th {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafafa; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+  input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--accent);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  .checklist li { list-style: none; margin-left: -20px; display: flex; align-items: flex-start; gap: 4px; padding: 3px 0; }
+  strong { color: #1a1a1a; }
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    header h1 { font-size: 12px; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; }
+  }
+</style>
+
+</head>
+<body>
+<header><a href="index.html">← 一覧へ</a><h1>撮影前チェックリスト</h1></header>
+<div class="content">
+<h1>撮影前チェックリスト</h1>
+<h2>現場モラル動画「見られているのは、腕だけじゃない。」</h2>
+<hr />
+<h2>ロケ地確保（撮影2週間前まで）</h2>
+<ul>
+<li>☐ 撮影可能な工事現場の確保（住宅地内が理想）</li>
+<li>☐ 現場オーナー・施主の撮影許可取得</li>
+<li>☐ 近隣住民への事前周知（可能であれば）</li>
+<li>☐ 近隣住民カット用の<strong>AI生成動画の制作着手</strong>（Runway/Kling等。プロンプト設計→生成→チェック）</li>
+<li>☐ シーン10用：住民の<strong>後ろ姿・手元を演じる協力者</strong>の確保（顔はAI差し替え。演技力不要・所作のみ）</li>
+<li>☐ 通行人が自然に通れる道路環境の確認</li>
+<li>☐ 洗濯物を干せるベランダがある近隣住宅の確認（シーン6用・協力依頼）</li>
+<li>☐ 現場トイレが近隣住宅の窓に近い位置に置けるか確認（シーン5用）</li>
+<li>☐ 早朝撮影（6:00〜7:30）の騒音問題の確認・配慮</li>
+</ul>
+<hr />
+<h2>キャスト・スタッフ確保（撮影1週間前まで）</h2>
+<ul>
+<li>☐ 佐藤役（40代・現場監督のオーラがある方）のキャスティング</li>
+<li>☐ 田中役（30〜40代・面倒見の良い兄貴分）のキャスティング</li>
+<li>☐ 山本役（20代前半・素直な若者）のキャスティング</li>
+<li>☐ 鈴木役（50代・貫禄のあるベテラン）のキャスティング</li>
+<li>☐ 近隣住民・子ども：<strong>AI生成で対応（実キャスティング不要）</strong>。シーン10の後ろ姿協力者のみ手配</li>
+<li>☐ 通行人役（複数名）のキャスティング</li>
+<li>☐ ナレーター（声優・ナレーション経験者推奨）の確保</li>
+<li>☐ カメラマン確保</li>
+<li>☐ 音声担当確保</li>
+<li>☐ 演出・監督（兼任可）</li>
+<li>☐ 記録スクリプター確保</li>
+<li>☐ 全員の撮影日程の確認</li>
+</ul>
+<hr />
+<h2>機材チェックリスト（撮影前日）</h2>
+<blockquote>
+<p><strong>撮影機材はスマートフォンを使用します。</strong></p>
+</blockquote>
+<h3>映像機材（スマートフォン）</h3>
+<ul>
+<li>☐ メインのスマートフォン（4K撮影動作確認済み）</li>
+<li>☐ 予備のスマートフォン（1〜2台・社員のものを借用可）</li>
+<li>☐ スマートフォン用三脚マウント（各台数分）</li>
+<li>☐ 三脚（最低1本・2本あれば理想）</li>
+<li>☐ スマートフォン用ジンバル/スタビライザー（DJI OM等）※手持ち歩き撮影用</li>
+<li>☐ クリップ式広角レンズ（あれば）</li>
+<li>☐ クリップ式NDフィルター（あれば・屋外撮影用）</li>
+<li>☐ モバイルバッテリー（各スマートフォン分・大容量推奨）</li>
+<li>☐ 充電ケーブル（各スマートフォン対応）</li>
+</ul>
+<h3>撮影設定の事前確認（前日に必ず）</h3>
+<ul>
+<li>☐ 解像度・フレームレートの設定確認（全台で統一）</li>
+<li>☐ グリッド表示のオン確認</li>
+<li>☐ 各スマートフォンの空き容量確認（4K・30fps換算で1時間≒約35GB）</li>
+<li>☐ 撮影アプリのインストール・動作確認（Filmic Pro等、使用する場合）</li>
+<li>☐ テスト撮影・再生確認（色味・明るさの確認）</li>
+</ul>
+<h3>音声機材</h3>
+<ul>
+<li>☐ 外付けマイク（Lightning/USB-C対応）※強く推奨</li>
+<li>☐ ヘッドフォン（音声モニタリング用）</li>
+<li>☐ 音声収録用の別スマートフォン（ボイスメモ二段収録用）</li>
+<li>☐ ピンマイク（Rode Wireless GO等、あれば会話シーンの音質が大幅に向上）</li>
+<li>☐ 予備電池・充電器（ワイヤレスマイク使用の場合）</li>
+</ul>
+<h3>照明・その他</h3>
+<ul>
+<li>☐ レフ板（屋外の影補填用）</li>
+<li>☐ 延長ケーブル・テーブルタップ（充電用）</li>
+<li>☐ ガフテープ・クランプ（スマートフォンを固定する際に使用可能）</li>
+</ul>
+<hr />
+<h2>小道具・衣装チェックリスト（撮影前日）</h2>
+<h3>衣装</h3>
+<ul>
+<li>☐ 作業着一式（佐藤・田中・山本・鈴木 各サイズ確認済み）</li>
+<li>☐ ヘルメット（各自サイズ調整済み）</li>
+<li>☐ 安全靴または現場靴</li>
+<li>☐ 安全帯・手袋（必要に応じて）</li>
+<li>☐ 近隣住民役の普段着（<strong>シーン10の後ろ姿撮影用のみ</strong>。AI生成側と髪型・色味を合わせる）</li>
+<li>☐ 通行人役の普段着（複数パターン）</li>
+</ul>
+<h3>小道具</h3>
+<ul>
+<li>☐ 工具箱（使い込んだ感じのもの）</li>
+<li>☐ ホウキ・ちりとり（複数本）</li>
+<li>☐ 切断機（グラインダー等）※実際に使用しない場合はレプリカ・停止状態のもの</li>
+<li>☐ 飲み物（ペットボトル）×人数分</li>
+<li>☐ たばこ（吸わない演技用・火はつけない）</li>
+<li>☐ 壁掛け時計（7:30を示すカット用）</li>
+<li>☐ 洗濯物（近隣住宅ベランダ用）</li>
+<li>☐ 資材（木材・鉄板など）道路に置く用</li>
+<li>☐ バリケード・カラーコーン</li>
+<li>☐ 汚し用の土・砂（道路清掃シーン用）</li>
+</ul>
+<hr />
+<h2>許可・法務チェックリスト</h2>
+<ul>
+<li>☐ ロケ地の撮影許可書取得</li>
+<li>☐ 出演者全員（社内キャスト・通行人役・シーン10後ろ姿協力者）の出演同意書の取得</li>
+<li>☐ 子どもは<strong>AI生成のため実在の子どもは撮影しない</strong>（保護者同意書は不要。実写を使う方針に変えた場合のみ同意書取得）</li>
+<li>☐ <strong>AI生成動画の利用規約・商用利用条件の確認</strong>（Runway/Kling等の出力を研修動画に使う権利の確認）</li>
+<li>☐ 実際の通行人が映り込む可能性がある場合の対応方針（ぼかし処理等）の決定</li>
+<li>☐ ドローン使用がある場合は飛行許可申請</li>
+<li>☐ 音楽（BGM）使用の権利処理方針の決定</li>
+</ul>
+<hr />
+<h2>撮影当日の持ち物確認</h2>
+<h3>スタッフ</h3>
+<ul>
+<li>☐ 台本（全員分）</li>
+<li>☐ 撮影スケジュール（全員分）</li>
+<li>☐ カット表（カメラマン分）</li>
+<li>☐ 小道具リスト（チェック用）</li>
+<li>☐ 連絡先一覧（キャスト・スタッフ全員）</li>
+<li>☐ 救急キット（万が一の怪我用）</li>
+<li>☐ 飲料水・軽食（長丁場のため必須）</li>
+<li>☐ 帽子・日焼け止め（夏場撮影の場合）</li>
+<li>☐ レインウェア（雨天の場合）</li>
+</ul>
+<hr />
+<h2>撮影終了後のチェックリスト</h2>
+<h3>現場撤収</h3>
+<ul>
+<li>☐ 機材の回収・点数確認</li>
+<li>☐ 小道具の回収</li>
+<li>☐ ロケ地の清掃（現場をお借りした状態に戻す）</li>
+<li>☐ ゴミの持ち帰り</li>
+</ul>
+<h3>データ管理</h3>
+<ul>
+<li>☐ 撮影データのバックアップ（2箇所以上）</li>
+<li>☐ カット番号とデータの紐付け確認</li>
+<li>☐ NGカットの記録（再撮が必要なカットのリスト化）</li>
+</ul>
+<hr />
+<h2>「もし撮れなかった場合」の対処法</h2>
+<table>
+<thead>
+<tr>
+<th>撮れなかったシーン</th>
+<th>代替手段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>朝の住宅街（子ども登校）</td>
+<td><strong>AI生成で対応</strong>（実撮影しない）。生成が間に合わない場合は大人の通勤・散歩の後ろ姿で代替</td>
+</tr>
+<tr>
+<td>洗濯物のあるベランダ</td>
+<td>スタジオセットまたは別の場所で再現</td>
+</tr>
+<tr>
+<td>通行人が自然に歩くカット</td>
+<td>通行人役の方に複数回歩いてもらう</td>
+</tr>
+<tr>
+<td>夕方ゴールデンアワー</td>
+<td>翌日リベンジ or 照明で再現</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

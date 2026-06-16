@@ -20,7 +20,7 @@
   .script-card {
     display: block; background: linear-gradient(135deg, #2a2000 0%, #1e1800 100%);
     border: 1px solid #e8a020; border-radius: 16px; padding: 28px 24px;
-    text-decoration: none; color: #fff; margin-bottom: 32px; transition: background .15s;
+    color: #fff; margin-bottom: 32px; transition: background .15s; cursor: pointer;
   }
   .script-card:hover { background: linear-gradient(135deg, #332600 0%, #261e00 100%); }
   .script-card .sc-label { font-size: 10px; letter-spacing: 2px; color: #e8a020; text-transform: uppercase; margin-bottom: 10px; }
@@ -52,18 +52,18 @@
   <div class="sub">約15分 ｜ スマートフォン撮影 ｜ 2日間撮影</div>
 </div>
 <div class="wrap">
-  <a class="script-card" href="06_台本_見やすい版.html">
+  <div class="script-card" onclick="location.href='06_台本_見やすい版.html'">
     <div class="sc-label">Script — 台本（全文）</div>
     <div class="sc-title">「見られているのは、腕だけじゃない。<br>その行動が、現場の信用をつくる。」</div>
     <div class="sc-desc">全12シーン・約15分の撮影台本。セリフ・ナレーション・ト書き・テロップを完全収録。</div>
     <div class="sc-scenes">
-      <a href="06_台本_見やすい版.html#scene-1">シーン1 オープニング</a><a href="06_台本_見やすい版.html#scene-2">シーン2 朝の到着</a><a href="06_台本_見やすい版.html#scene-3">シーン3 準備音</a>
-      <a href="06_台本_見やすい版.html#scene-4">シーン4 朝礼</a><a href="06_台本_見やすい版.html#scene-5">シーン5 トイレ配置</a><a href="06_台本_見やすい版.html#scene-6">シーン6 切断作業</a>
-      <a href="06_台本_見やすい版.html#scene-7">シーン7 休憩・喫煙</a><a href="06_台本_見やすい版.html#scene-8">シーン8 通行人対応</a><a href="06_台本_見やすい版.html#scene-9">シーン9 言葉遣い</a>
-      <a href="06_台本_見やすい版.html#scene-10">シーン10 近隣対応</a><a href="06_台本_見やすい版.html#scene-11">シーン11 道路清掃</a><a href="06_台本_見やすい版.html#scene-12">シーン12 エンディング</a>
+      <a href="06_台本_見やすい版.html#scene-1" onclick="event.stopPropagation()">シーン1 オープニング</a><a href="06_台本_見やすい版.html#scene-2" onclick="event.stopPropagation()">シーン2 朝の到着</a><a href="06_台本_見やすい版.html#scene-3" onclick="event.stopPropagation()">シーン3 準備音</a>
+      <a href="06_台本_見やすい版.html#scene-4" onclick="event.stopPropagation()">シーン4 朝礼</a><a href="06_台本_見やすい版.html#scene-5" onclick="event.stopPropagation()">シーン5 トイレ配置</a><a href="06_台本_見やすい版.html#scene-6" onclick="event.stopPropagation()">シーン6 切断作業</a>
+      <a href="06_台本_見やすい版.html#scene-7" onclick="event.stopPropagation()">シーン7 休憩・喫煙</a><a href="06_台本_見やすい版.html#scene-8" onclick="event.stopPropagation()">シーン8 通行人対応</a><a href="06_台本_見やすい版.html#scene-9" onclick="event.stopPropagation()">シーン9 言葉遣い</a>
+      <a href="06_台本_見やすい版.html#scene-10" onclick="event.stopPropagation()">シーン10 近隣対応</a><a href="06_台本_見やすい版.html#scene-11" onclick="event.stopPropagation()">シーン11 道路清掃</a><a href="06_台本_見やすい版.html#scene-12" onclick="event.stopPropagation()">シーン12 エンディング</a>
     </div>
     <div class="sc-arrow">台本を読む ›</div>
-  </a>
+  </div>
   <div class="section-label">Pre-Production — 撮影準備</div>
   <div class="group">
     <a class="card" href="01_撮影スケジュール.html">

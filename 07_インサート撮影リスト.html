@@ -135,6 +135,22 @@
   details.shot .det-body table { margin: 10px 0; }
   details.shot.cam > summary { color: #1f6f8b; }
   details.shot.act > summary { color: #9a6a00; }
+  /* カット版台本（09）専用 */
+  .cutsheet h3 {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    margin: 22px 0 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    font-size: 1em;
+    color: #1a1a1a;
+  }
+  .cutsheet h3:first-of-type { margin-top: 12px; }
+  .cutsheet h2 + p,
+  .cutsheet h2 ~ p:first-of-type { font-size: 0.95em; }
+  .cutsheet h3 + p { margin-top: 6px; padding-left: 4px; }
   @media (max-width: 600px) {
     body { font-size: 14px; }
     header h1 { font-size: 12px; }
@@ -144,7 +160,7 @@
 </style>
 
 </head>
-<body>
+<body class="">
 <header><a href="index.html">← 一覧へ</a><h1>インサート撮影リスト</h1></header>
 <div class="content">
 <h1>インサート撮影リスト</h1>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>モニターカンペ（カット別）｜現場モラル動画</title>
+<style>
+  :root { --accent: #e8a020; --bg: #ffffff; --text: #161616; --muted: #8a8a8a; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg); color: var(--text);
+    display: flex; flex-direction: column; height: 100vh; overflow: hidden;
+    -webkit-user-select: none; user-select: none;
+  }
+  .topbar {
+    display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+    background: #161616; color: #fff; font-size: 13px; flex-wrap: wrap;
+  }
+  .topbar .tag {
+    background: rgba(232,160,32,.18); color: var(--accent); border: 1px solid rgba(232,160,32,.4);
+    padding: 2px 9px; border-radius: 20px; font-size: 12px; white-space: nowrap;
+  }
+  .topbar .progress { color: #999; font-size: 11px; white-space: nowrap; margin-left: auto; }
+  .topbar select {
+    background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 6px;
+    padding: 4px 8px; font-size: 12px; max-width: 40vw;
+  }
+  .topbar .fs { background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 6px; padding: 4px 9px; font-size: 12px; cursor: pointer; }
+  .stage {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 28px; text-align: center; gap: 14px; overflow-y: auto; cursor: pointer;
+  }
+  .stage.scene-slide { background: linear-gradient(135deg, #1a1a1a, #2a2000); color: #fff; }
+  .scene-slide .scene-num { font-size: 12px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; }
+  .scene-slide h1 { font-size: clamp(1.6em, 6vw, 2.6em); margin-top: 10px; line-height: 1.4; }
+  .scene-slide .time { color: var(--accent); font-size: 0.95em; margin-top: 12px; }
+  .scene-slide .purpose { max-width: 560px; color: #bbb; font-size: 0.95em; margin-top: 20px; line-height: 1.75; }
+  .cut-item { max-width: 700px; width: 100%; }
+  .cut-item .action { color: var(--muted); font-size: clamp(1em, 3vw, 1.3em); margin: 10px 0; }
+  .cut-item .action::before { content: "▷ "; }
+  .cut-item .speaker { color: var(--accent); font-weight: 700; font-size: clamp(1em, 3vw, 1.3em); margin-top: 20px; }
+  .cut-item .speech { font-weight: 800; font-size: clamp(1.5em, 5.5vw, 3em); line-height: 1.45; margin-top: 6px; }
+  .notes { max-width: 620px; color: var(--muted); font-style: italic; font-size: clamp(0.85em, 2.5vw, 1.05em); margin-top: 26px; border-top: 1px solid #eee; padding-top: 14px; }
+  .navbar { display: flex; border-top: 1px solid #eee; flex-shrink: 0; }
+  .navbar button { flex: 1; padding: 18px; border: none; background: #fafafa; font-size: 15px; font-weight: 700; color: #333; cursor: pointer; }
+  .navbar button:active { background: #eee; }
+  .navbar button:disabled { opacity: .3; }
+  .navbar .next { background: #161616; color: #fff; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="tag" id="tagScene">シーン -</span>
+  <span class="tag" id="tagCut">カット -</span>
+  <button class="fs" id="fsBtn" title="全画面表示">⛶</button>
+  <span class="progress" id="progress">- / -</span>
+  <select id="jump"></select>
+</div>
+<div class="stage" id="stage"></div>
+<div class="navbar">
+  <button id="prevBtn">← 前のカット</button>
+  <button id="nextBtn" class="next">次のカット →</button>
+</div>
+<script>
+const SCENES = [{"num": 1, "title": "オープニング", "time": "0:00〜1:20", "purpose": "住宅地の「静かな朝の日常」を見せ、そこに工事現場が存在することの違和感を自然に示す。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "朝の静かな道路の空カット（人物なし）。木漏れ日や光が差す感じ"}], "notes": []}, {"letter": "B", "camera": "AI生成（遠景）", "items": [{"type": "action", "text": "遠くから登校する子ども（後ろ姿・遠景。現場が背景に入る構図）"}], "notes": []}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "住民が洗濯物を干す（2階ベランダ目線／地上目線の2パターン）"}], "notes": []}, {"letter": "D", "camera": "固定・望遠", "items": [{"type": "action", "text": "犬の散歩をする人。のどかな日常感"}], "notes": []}, {"letter": "E", "camera": "固定・引き", "items": [{"type": "action", "text": "そのすぐ隣に工事現場がある全景カット。現場の存在感を出す"}], "notes": []}, {"letter": "F", "camera": "固定", "items": [{"type": "action", "text": "協力業者の車両が現場に入ってくる。静かな朝に車が入る対比"}], "notes": ["実キャストのセリフなし（ナレーションのみ）。映像で日常感を作る"]}]}, {"num": 2, "title": "朝の現場到着", "time": "1:20〜2:40", "purpose": "作業前の「何気ない行動」が近隣にどう見えているかを対比で見せる。", "cuts": [{"letter": "A", "camera": "固定", "items": [{"type": "action", "text": "車のドアを強く閉める瞬間"}], "notes": []}, {"letter": "B", "camera": "手持ち・近接", "items": [{"type": "action", "text": "高木・村田が大声で会話しながら歩く。手持ちで距離感を出す"}, {"type": "line", "speaker": "高木", "text": "昨日遅かったんで、眠いっすね。"}, {"type": "line", "speaker": "村田", "text": "朝礼までまだあるし、少し休んでおけばいいだろ。"}], "notes": ["高木＝悪気ゼロで自然に眠そうに。村田＝それが普通だと思っている自然体"]}, {"letter": "C", "camera": "固定・低アングル", "items": [{"type": "action", "text": "村田が資材置き場付近で横になる。地面から見上げる感じで"}], "notes": []}, {"letter": "D", "camera": "AI生成（住民視点）", "items": [{"type": "action", "text": "近隣住民がカーテン越しに現場を見る。少し開けて覗く"}], "notes": []}, {"letter": "E", "camera": "固定・引き", "items": [{"type": "action", "text": "坂口が声をかけるシーン全体"}], "notes": []}, {"letter": "F", "camera": "切り返し（坂口→高木）", "items": [{"type": "line", "speaker": "坂口", "text": "おはよう。ここは住宅地の現場だから、朝の行動には特に気をつけよう。大きな声で話さない。車のドアも静かに閉める。現場内でも寝転がらない。作業前でも、近隣の方から見れば、俺たちは現場の人間だからな。"}, {"type": "line", "speaker": "高木", "text": "すみません。まだ作業前だから、そこまで気にしていませんでした。"}, {"type": "line", "speaker": "坂口", "text": "そう思いがちだけど、現場の印象は朝の到着時から始まっている。良い仕事をするためにも、まず現場に入る姿勢から整えよう。"}], "notes": ["坂口＝責めず「みんなで気をつけよう」。軽く肩に手を置く親近感"]}]}, {"num": 3, "title": "朝礼前・7時30分の準備音", "time": "2:40〜4:00", "purpose": "音の問題を視覚的にも表現する。", "cuts": [{"letter": "A", "camera": "クローズアップ", "items": [{"type": "action", "text": "時計が7:30を指している（できれば実際の時計をCUで）"}], "notes": []}, {"letter": "B", "camera": "固定", "items": [{"type": "action", "text": "工具箱が「ガン」と置かれる瞬間"}], "notes": []}, {"letter": "C", "camera": "手持ち・追い", "items": [{"type": "action", "text": "資材を引きずる職人の手元から足元へパン"}], "notes": []}, {"letter": "D", "camera": "AI生成", "items": [{"type": "action", "text": "住民が室内で時計を見ながら現場の音に気づく"}, {"type": "line", "speaker": "近隣住民", "text": "まだ7時半なのに、もう音がしている……。"}], "notes": ["怒りでなく困り。眉をひそめる程度"]}, {"letter": "E", "camera": "固定・引き", "items": [{"type": "action", "text": "坂口が気づいて止める"}, {"type": "line", "speaker": "高木", "text": "先に準備しておいた方が、作業開始してすぐ動けますよね。"}, {"type": "line", "speaker": "村田", "text": "準備だけだから、作業じゃないしな。"}, {"type": "line", "speaker": "坂口", "text": "ちょっと待とう。まだ音を出す時間じゃない。"}, {"type": "line", "speaker": "高木", "text": "作業じゃなくて、準備だけでもですか？"}, {"type": "line", "speaker": "坂口", "text": "準備でも、音が出れば近隣の方には作業音と同じに聞こえる。特に朝の住宅地では、金属音や資材を動かす音は思っている以上に響くんだ。"}], "notes": ["高木＝純粋な疑問（生意気でなく）。村田＝正論だと思っている。坂口＝冷静に止める"]}, {"letter": "F", "camera": "切り返し（山口が加わる3者）", "items": [{"type": "action", "text": "元請け現場監督の山口が近づく"}, {"type": "line", "speaker": "山口", "text": "おはようございます。皆さん、朝早くからありがとうございます。ただ、この現場は住宅地の中にあります。作業開始時間前の音は、近隣クレームにつながりやすい部分です。朝礼前にできるのは、音の出ない確認や打ち合わせまでにしましょう。工具や資材を動かす作業は、決められた時間からお願いします。"}, {"type": "line", "speaker": "村田", "text": "準備くらいならいいと思っていました。"}, {"type": "line", "speaker": "山口", "text": "その気持ちは分かります。ただ、近隣の方には「もう工事が始まっている」と受け取られてしまいます。時間を守ることは、現場の信用を守ることでもあります。"}], "notes": ["山口＝怒らない。「ご理解いただいて助かります」という姿勢"]}]}, {"num": 4, "title": "朝礼・協力業者として現場に入る意識", "time": "4:00〜5:00", "purpose": "チームとして現場に入る意識の高揚感を出す。教訓的にならないよう、現場の雰囲気を大切に。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "全員が集まった朝礼の全体カット"}], "notes": []}, {"letter": "B", "camera": "固定・正面やや下から", "items": [{"type": "action", "text": "山口がスピーチ。リーダーとしての貫禄を出す"}, {"type": "line", "speaker": "山口", "text": "本日もよろしくお願いします。この現場は住宅地の中にあります。近隣住宅、通学路、歩行者の通行があります。作業内容だけでなく、音、粉じん、臭い、言葉遣い、服装、道路清掃にも注意してください。近隣の方から見ると、元請けも協力業者も区別はありません。ここで作業する全員が、この現場の顔です。"}], "notes": ["大きすぎず小さすぎない声。全員の顔を見渡しながら。「一緒にやっていこう」の雰囲気"]}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "聞いている職人たちの表情（高木・村田それぞれ）"}, {"type": "line", "speaker": "坂口", "text": "うちの職人も、今日はその意識でお願いします。良い仕事をするのは当然。でも、それだけじゃなく、周りに迷惑をかけないこともプロの仕事です。作業中だけじゃなく、休憩中、移動中、片付け中も見られている。そこまで含めて、職人としての信用だからな。"}], "notes": ["坂口＝「指導」でなく「共有」の温度感で"]}, {"letter": "D", "camera": "切り返し（坂口→高木）", "items": [{"type": "line", "speaker": "高木", "text": "現場の外からどう見えるかも考える、ということですね。"}, {"type": "line", "speaker": "坂口", "text": "そういうこと。自分たちの会社の名前も、この現場の信用も背負っていると思って動こう。"}], "notes": ["高木＝素直に受け止めて聞く。反発しない"]}]}, {"num": 5, "title": "現場トイレ・設備配置への気づき", "time": "5:00〜6:00", "purpose": "普段意識しない「設備の位置」への気づきをさりげなく描く。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "現場トイレと近隣住宅の窓が同フレームに入る構図"}], "notes": []}, {"letter": "B", "camera": "AI生成", "items": [{"type": "action", "text": "近隣住民が窓から見て不快そうな表情。窓越しに現場が映り込む"}, {"type": "line", "speaker": "近隣住民", "text": "窓のすぐ近くにトイレがあるのは、少し気になりますね……。"}], "notes": ["嫌悪でなく「困ったな」という表情"]}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "高木・村田が気づいて話す"}, {"type": "line", "speaker": "高木", "text": "あのトイレ、隣の家にかなり近いですね。"}, {"type": "line", "speaker": "村田", "text": "確かに。俺たちが置いたわけじゃないけど、気にはなるな。"}, {"type": "line", "speaker": "坂口", "text": "そういう気づきは大事だ。自分たちが設置したものじゃなくても、気になることがあれば報告する。"}], "notes": ["高木・村田＝自然な気づき"]}, {"letter": "D", "camera": "固定", "items": [{"type": "action", "text": "坂口が山口に報告する"}, {"type": "line", "speaker": "坂口", "text": "山口さん、現場トイレの位置ですが、隣家の窓に近いように見えます。近隣の方が気にされるかもしれません。"}, {"type": "line", "speaker": "山口", "text": "ありがとうございます。確認して、移動できるか検討します。難しい場合でも、目隠し、清掃、消臭対策を徹底します。"}], "notes": ["坂口＝冷静に共有。山口＝誠実に受け止める"]}]}, {"num": 6, "title": "午前作業・洗濯物の近くでの切断作業", "time": "6:00〜7:45", "purpose": "「職人側の論理」と「住民側の感覚」の対比を映像で明確に見せる。", "cuts": [{"letter": "A", "camera": "固定・引き（全景）", "items": [{"type": "action", "text": "隣家の洗濯物と切断機が同フレームに入る全体カット（**最重要カット**）"}], "notes": []}, {"letter": "B", "camera": "クローズアップ", "items": [{"type": "action", "text": "隣家の洗濯物のアップ（生活感を強調）"}], "notes": []}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "高木・村田が切断機を準備する"}, {"type": "line", "speaker": "高木", "text": "ここで切った方が早いですね。材料も近いですし。"}, {"type": "line", "speaker": "村田", "text": "そうだな。すぐ終わるし、ここでやるか。"}], "notes": []}, {"letter": "D", "camera": "主観カット（住民視点）", "items": [{"type": "action", "text": "住民がベランダから洗濯物越しに切断作業を見る"}], "notes": []}, {"letter": "E", "camera": "固定", "items": [{"type": "action", "text": "坂口が気づいて切断を止める"}, {"type": "line", "speaker": "坂口", "text": "待った。隣の洗濯物が近い。"}], "notes": ["すぐ気づいて冷静に止める。「気づいた自分」の優しい誇りがにじむ"]}, {"letter": "F", "camera": "切り返し（坂口→高木→村田→山口）", "items": [{"type": "action", "text": "4者の会話。表情の変化を切り返しで追う"}, {"type": "line", "speaker": "高木", "text": "でも、風もそんなに強くないですよ。"}, {"type": "line", "speaker": "坂口", "text": "実際に粉じんが飛ぶかどうかだけじゃない。近隣の方から見れば、洗濯物の近くで切断作業をしているだけで不安になる。"}, {"type": "line", "speaker": "村田", "text": "確かに、逆の立場なら気になるな。"}, {"type": "line", "speaker": "山口", "text": "作業場所を変えましょう。どうしてもここで作業する必要がある場合は、事前に説明し、養生や飛散防止をしてからにしてください。"}, {"type": "line", "speaker": "高木", "text": "作業効率だけで考えていました。周りを見てから判断しないといけないですね。"}, {"type": "line", "speaker": "坂口", "text": "早く終わらせることも大事だけど、近隣に迷惑をかけないことも同じくらい大事だ。きれいに納めるだけが職人の仕事じゃない。周りに配慮して作業することも、職人の腕の一つだよ。"}], "notes": ["村田＝坂口の言葉でスッと納得する素直な反省（**転換点**）"]}]}, {"num": 7, "title": "15時休憩・道路での休憩、喫煙、服装", "time": "7:45〜9:15", "purpose": "休憩中の姿が周囲にどう見えるかを多角的に見せる。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "道路脇に座っている職人たちの全体カット"}], "notes": []}, {"letter": "B", "camera": "通行人の主観・手持ち", "items": [{"type": "action", "text": "歩いてきたら職人が道路に座っている。手持ちで進行感を出す"}, {"type": "line", "speaker": "高木", "text": "少しの休憩ですし、ここなら風も通っていいですね。"}, {"type": "line", "speaker": "村田", "text": "作業中じゃないし、邪魔にならなければ大丈夫だろ。"}], "notes": ["村田＝悪気なく「邪魔にならなければ大丈夫だろ」の自然体"]}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "通行人が避けて歩く。職人たちは画面の端に座っている"}, {"type": "line", "speaker": "通行人", "text": "ちょっと通りづらいな……。"}, {"type": "line", "speaker": "近隣住民", "text": "道路で座って休憩されると、少し気になりますね……。"}], "notes": []}, {"letter": "D", "camera": "クローズアップ", "items": [{"type": "action", "text": "村田がたばこを取り出し火をつけようとする手元（**現場では火はつけない・煙は出さない**）"}], "notes": ["たばこは火をつけず、取り出す仕草のみ"]}, {"letter": "E", "camera": "合成素材", "items": [{"type": "action", "text": "たばこの煙が住宅側に流れる映像（**フリー素材を合成**。現場では煙を出さない）"}, {"type": "line", "speaker": "近隣住民", "text": "たばこの臭いも気になります……。"}], "notes": []}, {"letter": "F", "camera": "AI生成", "items": [{"type": "action", "text": "近隣住民が窓を閉める。窓を閉める手元のアップ"}], "notes": ["そっと窓を閉める動作"]}, {"letter": "G", "camera": "固定・引き", "items": [{"type": "action", "text": "坂口が声をかける。休憩組の全体＋坂口"}, {"type": "line", "speaker": "坂口", "text": "休憩場所を移動しよう。道路で休憩するのはやめてください。"}, {"type": "line", "speaker": "高木", "text": "端に座っているだけでもだめですか？"}, {"type": "line", "speaker": "坂口", "text": "道路は近隣の方や通行人も使う場所だ。少し端にいるつもりでも、通る人には圧迫感がある。現場の人が道路で座っているだけで、通りづらい、怖い、だらしないと感じる人もいる。"}, {"type": "line", "speaker": "村田", "text": "確かに、通行人が避けて歩いていましたね。"}, {"type": "line", "speaker": "坂口", "text": "休憩は決められた場所で取る。道路や近隣住宅の前では休憩しない。これは必ず守ろう。それから、喫煙は指定場所だけ。住宅側や道路では吸わないように。煙や臭いは、自分たちが思っている以上に広がる。近隣の方にとっては、かなり気になるものだ。服装も整えよう。休憩中でも、現場の人間として見られている。"}], "notes": []}, {"letter": "H", "camera": "切り返し（坂口・山口・高木・村田）", "items": [{"type": "line", "speaker": "山口", "text": "暑い時期でも、上半身裸に近い格好や、だらしない服装は避けてください。腰パンや着崩しも、現場の印象を悪くします。皆さんの技術や仕事ぶりが良くても、休憩中の姿で評価を下げてしまうのはもったいないです。"}, {"type": "line", "speaker": "高木", "text": "休憩中でも、近隣の方や通行人から見られているんですね。"}, {"type": "line", "speaker": "坂口", "text": "そうだ。近隣の方から見れば、作業中か休憩中かは関係ない。現場の人がどういう態度でいるかを見ている。"}, {"type": "line", "speaker": "村田", "text": "仕事以外のところで悪く見られるのは損ですね。"}], "notes": ["山口＝「もったいない」と惜しむ姿勢。命令口調にしない"]}]}, {"num": 8, "title": "通行人への対応", "time": "9:15〜10:45", "purpose": "「不十分な対応」と「丁寧な対応」の差を映像で際立たせる。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "資材で通路が狭くなった状態の道路"}], "notes": []}, {"letter": "B", "camera": "通行人の視点・手持ち", "items": [{"type": "action", "text": "進んできたら通れなくなる緊張感。手持ちで歩きながら撮影"}, {"type": "line", "speaker": "通行人", "text": "すみません、通れますか？"}, {"type": "line", "speaker": "高木", "text": "あ、今ちょっと作業中なんで、待ってください。"}, {"type": "line", "speaker": "通行人", "text": "どこを通ればいいですか？"}, {"type": "line", "speaker": "高木", "text": "えっと……ちょっと待ってください。"}], "notes": ["高木＝本当に焦っている。通行人＝困惑・迷子感"]}, {"letter": "C", "camera": "切り返し", "items": [{"type": "action", "text": "通行人⇔高木の不十分なやりとり"}], "notes": []}, {"letter": "D", "camera": "固定・表情CU", "items": [{"type": "action", "text": "通行人が困った表情をする"}], "notes": []}, {"letter": "E", "camera": "固定", "items": [{"type": "action", "text": "坂口が入ってきて丁寧に誘導する"}, {"type": "line", "speaker": "坂口", "text": "申し訳ありません。ただいま資材を搬入しています。こちら側を通っていただけますか。足元にお気をつけください。"}, {"type": "line", "speaker": "通行人", "text": "ありがとうございます。"}], "notes": ["坂口＝落ち着いて。言葉だけでなく手で誘導するジェスチャー"]}, {"letter": "F", "camera": "固定", "items": [{"type": "action", "text": "通行人が「ありがとうございます」と去っていく"}], "notes": []}, {"letter": "G", "camera": "切り返し（坂口→高木）", "items": [{"type": "line", "speaker": "坂口", "text": "高木、通行人が来たら、まず安全を確保する。それから、丁寧に案内する。"}, {"type": "line", "speaker": "高木", "text": "すみません。作業を止めたら迷惑かと思って、焦ってしまいました。"}, {"type": "line", "speaker": "坂口", "text": "作業を止める判断も大事な仕事だ。通行人にとっては、現場の前を通るだけでも不安がある。「すみません」「こちらをお通りください」「足元にお気をつけください」「ありがとうございます」この一言があるだけで、現場の印象は全然違う。"}, {"type": "line", "speaker": "山口", "text": "通行人への対応は、元請けだけでなく、現場にいる全員で行うものです。近くにいる人が、まず声をかける。それが安全にも、信頼にもつながります。"}], "notes": []}]}, {"num": 9, "title": "現場内の言葉遣い・乱暴な態度", "time": "10:45〜12:10", "purpose": "現場内の雰囲気が外にどう漏れ出るかを見せる。暴力的な映像にならないよう注意。", "cuts": [{"letter": "A", "camera": "手持ち・近接", "items": [{"type": "action", "text": "村田が怒鳴る会話シーン。手持ちで臨場感を出す"}, {"type": "line", "speaker": "村田", "text": "おい、違うだろ！何やってんだよ！"}, {"type": "line", "speaker": "高木", "text": "すみません、すぐ直します。"}, {"type": "line", "speaker": "村田", "text": "ちゃんと考えて動けよ！何回言えば分かるんだ！"}], "notes": ["村田＝怒りは本物だが悪人ではない。焦り・プレッシャーから来る怒りとして"]}, {"letter": "B", "camera": "クローズアップ", "items": [{"type": "action", "text": "高木の萎縮した表情"}], "notes": ["萎縮するがやり返さない、固まる感じ"]}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "村田が資材を高木の足元近くに乱暴に叩きつける動き（**身体接触なし**）"}], "notes": []}, {"letter": "D", "camera": "固定", "items": [{"type": "action", "text": "高木が驚いて身を引く動作"}, {"type": "line", "speaker": "近隣住民", "text": "怖い雰囲気ですね……。"}], "notes": []}, {"letter": "E", "camera": "AI生成", "items": [{"type": "action", "text": "住民が現場の様子を見て驚く。表情のアップ（実撮影する場合は後ろ姿のみ）"}], "notes": ["ハッとして振り向く"]}, {"letter": "F", "camera": "固定", "items": [{"type": "action", "text": "坂口が作業を止める"}, {"type": "line", "speaker": "坂口", "text": "村田さん、いったん止めましょう。今の言い方と態度は良くないです。"}, {"type": "line", "speaker": "村田", "text": "悪い。急いでいたから、つい。"}], "notes": ["坂口＝怒りでなく「困る」表情。村田への敬意は保ちながら"]}, {"letter": "G", "camera": "切り返し（坂口→村田）", "items": [{"type": "line", "speaker": "坂口", "text": "注意や指導は必要です。でも、怒鳴ることや威圧することとは違います。現場の中の声は、外に聞こえています。乱暴な動きも、外から見ると暴力的に見えることがあります。"}, {"type": "line", "speaker": "山口", "text": "近隣の方が現場を見た時に、怒鳴り声や乱暴な態度があると、不安になります。「この現場は大丈夫だろうか」と思われてしまいます。安全面でも、品質面でも、落ち着いた現場づくりが大切です。"}, {"type": "line", "speaker": "村田", "text": "そうですね。仕事に集中していて、外からどう見えるかを忘れていました。"}], "notes": ["山口＝感情的にならず「品質・安全の問題」として冷静に伝える"]}, {"letter": "H", "camera": "固定", "items": [{"type": "action", "text": "村田が高木に向き直って謝る（関係の修復を示す）"}, {"type": "line", "speaker": "村田", "text": "高木、さっきは悪かった。材料はこっちに置いてくれ。分からない時は先に聞いてくれればいい。"}, {"type": "line", "speaker": "高木", "text": "はい。ありがとうございます。"}], "notes": ["村田＝少し照れくさそうに、でもきちんと。ベテランが若手に謝れる人間の大きさ"]}]}, {"num": 10, "title": "近隣から注意を受けた後の対応", "time": "12:10〜13:20", "purpose": "「受け止め方」と「その後の言動」の両方が見られていることを描く。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "住民が山口に話しかけるシーン全体（**住民は後ろ姿**で配置）"}], "notes": []}, {"letter": "B", "camera": "切り返し", "items": [{"type": "action", "text": "住民⇔山口の会話。**山口側のみ正面で撮影**し誠実な表情を強調。住民は後ろ姿・手元、顔・声はAI合成"}, {"type": "line", "speaker": "近隣住民", "text": "すみません。午前中、少し音と声が気になりました。できれば気をつけてもらえると助かります。"}, {"type": "line", "speaker": "山口", "text": "ご迷惑をおかけして申し訳ありません。作業内容と声の大きさを確認し、すぐに注意いたします。お声がけいただきありがとうございます。"}], "notes": ["住民＝後ろ姿を実撮影＋AI顔合成。所作だけ自然に。山口＝深くお辞儀し、正面で誠実に"]}, {"letter": "C", "camera": "固定・引き", "items": [{"type": "action", "text": "少し離れた場所での高木・村田の小声の会話"}, {"type": "line", "speaker": "高木", "text": "また言われちゃいましたね。"}, {"type": "line", "speaker": "村田", "text": "細かいなあ。こっちも仕事でやってるのにな。"}], "notes": ["村田「細かいなあ」は悪気の薄い本音として"]}, {"letter": "D", "camera": "後ろ姿＋AI合成", "items": [{"type": "action", "text": "まだ近くにいた住民に言葉が聞こえてしまう。後ろ姿で撮影し、曇る表情はAI顔合成"}], "notes": ["歩を止める／肩を落とす所作"]}, {"letter": "E", "camera": "固定", "items": [{"type": "action", "text": "坂口が気づいてすぐ動く"}, {"type": "line", "speaker": "坂口", "text": "今のは良くない。注意を受けた後の言葉ほど、気をつけないといけない。"}, {"type": "line", "speaker": "高木", "text": "すみません。聞こえていると思いませんでした。"}], "notes": []}, {"letter": "F", "camera": "切り返し（坂口→高木→村田）", "items": [{"type": "line", "speaker": "坂口", "text": "聞こえる、聞こえないの問題じゃない。近隣の方は、困っているから伝えてくれている。そこで陰で悪口を言えば、現場への不信感はもっと大きくなる。"}, {"type": "line", "speaker": "山口", "text": "苦情や注意は、現場を良くするための声でもあります。受け止めて、改善する。その姿勢が見えると、近隣の方も安心されます。"}, {"type": "line", "speaker": "村田", "text": "そうですね。言われたことに反発するんじゃなくて、まず受け止めるべきでした。"}, {"type": "line", "speaker": "高木", "text": "次から気をつけます。"}], "notes": []}]}, {"num": 11, "title": "夕方・道路清掃と作業終了時間", "time": "13:20〜14:35", "purpose": "「最後まで丁寧に」というメッセージを視覚的に気持ちよく終わらせる。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "道路に土・泥が残っている状態（セッティング必要）"}], "notes": []}, {"letter": "B", "camera": "クローズアップ", "items": [{"type": "action", "text": "泥の状態の地面アップ"}], "notes": []}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "高木・村田がさぼろうとする会話"}, {"type": "line", "speaker": "高木", "text": "もう時間もないですし、道路の泥は明日でもいいですかね。"}, {"type": "line", "speaker": "村田", "text": "暗くなるし、今日は帰ろうか。"}], "notes": ["高木＝軽い気持ちで"]}, {"letter": "D", "camera": "通行人の視点", "items": [{"type": "action", "text": "汚れた道路を避けて歩く通行人。車が通り、泥が少し広がる"}], "notes": []}, {"letter": "E", "camera": "固定", "items": [{"type": "action", "text": "坂口・山口の指導会話"}, {"type": "line", "speaker": "坂口", "text": "道路清掃までが今日の仕事だ。現場の外に出た汚れも、現場の責任だよ。"}, {"type": "line", "speaker": "山口", "text": "作業終了時間にも注意してください。夜遅くまで作業が続くと、音や照明で近隣の方に迷惑をかけます。朝早すぎる作業も、夜遅い作業も、住宅地ではクレームにつながります。時間内に終わる段取りを組むことも、プロの仕事です。"}, {"type": "line", "speaker": "高木", "text": "朝の準備音も、休憩中の姿も、帰る前の清掃も、全部見られているんですね。"}, {"type": "line", "speaker": "坂口", "text": "そうだ。現場での仕事は、作業そのものだけじゃない。来た時。作業している時。休憩している時。帰る時。全部が、自分たちの仕事の評価につながる。"}], "notes": []}, {"letter": "F", "camera": "固定・引き", "items": [{"type": "action", "text": "全員でホウキを持って清掃する（達成感のある画）"}], "notes": []}, {"letter": "G", "camera": "クローズアップ", "items": [{"type": "action", "text": "高木が自ら気づいて「こっちも」と声をかける表情（**山場**）"}, {"type": "line", "speaker": "高木", "text": "こっちも少し汚れています。ここも掃いてから帰ります。"}, {"type": "line", "speaker": "村田", "text": "いいね。そこに気づけるようになったら、一人前だな。"}, {"type": "line", "speaker": "坂口", "text": "そういう気づきが、信頼される職人につながる。"}], "notes": ["高木＝後半は自ら気づく＝山場。少し照れながらも自信がにじむ。村田＝温かい笑顔"]}, {"letter": "H", "camera": "固定", "items": [{"type": "action", "text": "清掃後のきれいな道路カット。Before/Afterの対比に使える"}], "notes": []}]}, {"num": 12, "title": "エンディング", "time": "14:35〜15:00", "purpose": "1日を通じた学びの集大成。希望感・温かさで締める。", "cuts": [{"letter": "A", "camera": "固定・引き", "items": [{"type": "action", "text": "清掃され整った現場の全景。夕方の光（ゴールデンアワー推奨）"}], "notes": []}, {"letter": "B", "camera": "固定", "items": [{"type": "action", "text": "職人たちが服装を整えて現場を後にする後ろ姿"}], "notes": []}, {"letter": "C", "camera": "固定", "items": [{"type": "action", "text": "高木が通行人に会釈する。通行人が微笑む"}], "notes": ["高木＝自然な温かさが出るまで繰り返す。通行人＝微笑んで会釈を返す"]}, {"letter": "D", "camera": "AI生成", "items": [{"type": "action", "text": "近隣住民が安心した表情で通り過ぎる（後ろ姿）"}], "notes": ["柔らかい笑顔・ホッとした雰囲気"]}, {"letter": "E", "camera": "固定・引き", "items": [{"type": "action", "text": "誰もいなくなった現場の佇まい。タイトルテロップ用"}], "notes": ["実キャストのセリフなし（ナレーションのみ）。表情と所作で温かさを出す"]}]}];
+
+const slides = [];
+const sceneStartIndex = {};
+SCENES.forEach(sc => {
+  sceneStartIndex[sc.num] = slides.length;
+  slides.push({ type: "scene", scene: sc });
+  sc.cuts.forEach(cut => slides.push({ type: "cut", scene: sc, cut }));
+});
+
+let idx = 0;
+const stage = document.getElementById("stage");
+const tagScene = document.getElementById("tagScene");
+const tagCut = document.getElementById("tagCut");
+const progress = document.getElementById("progress");
+const jump = document.getElementById("jump");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const fsBtn = document.getElementById("fsBtn");
+
+SCENES.forEach(sc => {
+  const opt = document.createElement("option");
+  opt.value = sceneStartIndex[sc.num];
+  opt.textContent = `シーン${sc.num} ${sc.title}`;
+  jump.appendChild(opt);
+});
+
+function esc(str) {
+  const d = document.createElement("div");
+  d.textContent = str == null ? "" : str;
+  return d.innerHTML;
+}
+
+// 台本の **強調** をそのまま踏襲して<strong>にする（安全上の注意など）。escでエスケープ後に変換するのでHTML注入の心配はない。
+function fmt(str) {
+  return esc(str).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+function render() {
+  const s = slides[idx];
+  tagScene.textContent = `シーン${s.scene.num}`;
+  progress.textContent = `${idx + 1} / ${slides.length}`;
+  jump.value = sceneStartIndex[s.scene.num];
+
+  if (s.type === "scene") {
+    tagCut.textContent = "導入";
+    stage.className = "stage scene-slide";
+    stage.innerHTML = `
+      <div class="scene-num">SCENE ${s.scene.num}</div>
+      <h1>${esc(s.scene.title)}</h1>
+      <div class="time">${esc(s.scene.time)}</div>
+      <div class="purpose">${esc(s.scene.purpose)}</div>
+    `;
+  } else {
+    const cut = s.cut;
+    tagCut.textContent = `カット${cut.letter}（${cut.camera}）`;
+    stage.className = "stage";
+    let html = "";
+    cut.items.forEach(it => {
+      if (it.type === "action") {
+        html += `<div class="cut-item"><div class="action">${fmt(it.text)}</div></div>`;
+      } else {
+        html += `<div class="cut-item"><div class="speaker">${esc(it.speaker)}</div><div class="speech">${fmt(it.text)}</div></div>`;
+      }
+    });
+    if (cut.notes.length) {
+      html += `<div class="notes">${cut.notes.map(fmt).join("<br>")}</div>`;
+    }
+    stage.innerHTML = html;
+  }
+  prevBtn.disabled = idx === 0;
+  nextBtn.disabled = idx === slides.length - 1;
+}
+
+function go(delta) {
+  idx = Math.max(0, Math.min(slides.length - 1, idx + delta));
+  render();
+}
+
+prevBtn.addEventListener("click", (e) => { e.stopPropagation(); go(-1); });
+nextBtn.addEventListener("click", (e) => { e.stopPropagation(); go(1); });
+jump.addEventListener("click", (e) => e.stopPropagation());
+jump.addEventListener("change", () => { idx = parseInt(jump.value, 10); render(); });
+fsBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen();
+});
+stage.addEventListener("click", (e) => {
+  if (e.clientX < window.innerWidth / 2) go(-1); else go(1);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); go(1); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+});
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>撮影用カンペ（シーン別）｜現場モラル動画</title>
+
+<style>
+  :root {
+    --accent: #e8a020;
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --muted: #666;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.7;
+    padding: 0 0 60px;
+  }
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  header a { color: var(--accent); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  header h1 { font-size: 14px; font-weight: 600; flex: 1; }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1 { font-size: 1.5em; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+  h2 { font-size: 1.2em; font-weight: 700; margin: 28px 0 10px; color: #1a1a1a; border-left: 4px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 1.05em; font-weight: 700; margin: 20px 0 8px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 20px; }
+  li { margin: 4px 0; }
+  blockquote {
+    background: #fff8e8;
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    color: #555;
+    font-style: italic;
+  }
+  pre, code {
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+  code { background: #f0ede8; padding: 2px 5px; border-radius: 3px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.9em;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  th {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafafa; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+  input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--accent);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  strong { color: #1a1a1a; }
+  details.shot {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  details.shot > summary {
+    cursor: pointer;
+    padding: 9px 14px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #555;
+    list-style: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  details.shot > summary::-webkit-details-marker { display: none; }
+  details.shot > summary::before {
+    content: "▶";
+    font-size: 0.7em;
+    color: var(--accent);
+    transition: transform .15s;
+  }
+  details.shot[open] > summary::before { transform: rotate(90deg); }
+  details.shot[open] > summary { border-bottom: 1px solid var(--border); }
+  details.shot .det-body { padding: 4px 14px 12px; }
+  details.shot .det-body table { margin: 10px 0; }
+  details.shot.cam > summary { color: #1f6f8b; }
+  details.shot.act > summary { color: #9a6a00; }
+  /* カット版台本（09）専用 */
+  .cutsheet h3 {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    margin: 22px 0 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    font-size: 1em;
+    color: #1a1a1a;
+  }
+  .cutsheet h3:first-of-type { margin-top: 12px; }
+  .cutsheet h2 + p,
+  .cutsheet h2 ~ p:first-of-type { font-size: 0.95em; }
+  .cutsheet h3 + p { margin-top: 6px; padding-left: 4px; }
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    header h1 { font-size: 12px; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; }
+  }
+</style>
+
+</head>
+<body class="">
+<header><a href="index.html">← 一覧へ</a><h1>撮影用カンペ（シーン別）</h1></header>
+<div class="content">
+<h1>撮影用カンペ（シーン別）</h1>
+<p><strong>現場でスマホからサッと確認するための簡易カンペ。</strong> セリフの流れと短い演技メモだけを、シーンごとに区切って掲載している。<br />
+カメラワークの詳細は<a href="06_台本_見やすい版.html">台本（通し版）</a>、カット割りは<a href="09_撮影台本_カット版.html">撮影台本（カット版）</a>を参照。</p>
+<blockquote>
+<p><strong>凡例</strong><br />
+- <strong>名前：</strong> に続く文章＝そのまま話すセリフ<br />
+- <em>斜体</em>＝言い方・演技のワンポイント<br />
+- ▷＝セリフ以外の動き（ト書き）<br />
+- （AI）＝AI生成動画に差し替わる部分（実演しても最終的な顔・声はAI）<br />
+- ⚠️ 📌＝撮影上の安全・演出上の注意（必ず確認）<br />
+- ナレーション・テロップ・カメラ指定はここでは扱わない（台本を参照）</p>
+</blockquote>
+<hr />
+<h2 id="scene-1">シーン 1　オープニング</h2>
+<p><strong><code>0:00〜1:20</code></strong>　｜　登場：なし（セリフなし・ナレーションのみ）</p>
+<blockquote>
+<p>状況：住宅地の静かな朝の日常を見せ、そこに工事現場がある違和感を映像だけで出す。</p>
+</blockquote>
+<p>▷ 朝の静かな道路（人物なし）<br />
+▷ 遠くから登校する子ども（AI）<br />
+▷ 住民が洗濯物を干す<br />
+▷ 犬の散歩をする人<br />
+▷ すぐ隣に工事現場がある全景<br />
+▷ 協力業者の車両が現場に入ってくる</p>
+<p><em>演技メモ：セリフなし。全カット固定カメラで「静かな日常」を出すだけでOK。</em></p>
+<hr />
+<h2 id="scene-2">シーン 2　朝の現場到着</h2>
+<p><strong><code>1:20〜2:40</code></strong>　｜　登場：高木・村田・坂口・近隣住民（AI）</p>
+<blockquote>
+<p>状況：到着直後の「何気ない行動」が近隣にどう見えているかの対比。坂口が気づいて注意する。</p>
+</blockquote>
+<p>▷ 車のドアを強く閉める音／大声で話しながら歩く高木・村田</p>
+<p><strong>高木：</strong> 昨日遅かったんで、眠いっすね。<br />
+<em>（悪気ゼロ、本当に眠そうに）</em></p>
+<p><strong>村田：</strong> 朝礼までまだあるし、少し休んでおけばいいだろ。<br />
+<em>（それが普通だと思っている自然体）</em></p>
+<p>▷ 村田が資材置き場付近で横になる／近隣住民（AI）がカーテン越しに見る</p>
+<p><strong>坂口：</strong> おはよう。ここは住宅地の現場だから、朝の行動には特に気をつけよう。大きな声で話さない。車のドアも静かに閉める。現場内でも寝転がらない。作業前でも、近隣の方から見れば、俺たちは現場の人間だからな。<br />
+<em>（責めず「みんなで気をつけよう」。軽く肩に手を置く）</em></p>
+<p><strong>高木：</strong> すみません。まだ作業前だから、そこまで気にしていませんでした。</p>
+<p><strong>坂口：</strong> そう思いがちだけど、現場の印象は朝の到着時から始まっている。良い仕事をするためにも、まず現場に入る姿勢から整えよう。</p>
+<hr />
+<h2 id="scene-3">シーン 3　朝礼前・7時30分の準備音</h2>
+<p><strong><code>2:40〜4:00</code></strong>　｜　登場：近隣住民（AI）・高木・村田・坂口・山口</p>
+<blockquote>
+<p>状況：朝礼前、7時30分の時点で準備の音が近隣に響いてしまう。坂口→山口の順で対応。</p>
+</blockquote>
+<p><strong>近隣住民（AI）：</strong> まだ7時半なのに、もう音がしている……。<br />
+<em>（怒りでなく困り。眉をひそめる程度）</em></p>
+<p><strong>高木：</strong> 先に準備しておいた方が、作業開始してすぐ動けますよね。</p>
+<p><strong>村田：</strong> 準備だけだから、作業じゃないしな。<br />
+<em>（完全に正論だと思っている顔）</em></p>
+<p>▷ 坂口が気づいて声をかける</p>
+<p><strong>坂口：</strong> ちょっと待とう。まだ音を出す時間じゃない。</p>
+<p><strong>高木：</strong> 作業じゃなくて、準備だけでもですか？<br />
+<em>（純粋な疑問。生意気にならないように）</em></p>
+<p><strong>坂口：</strong> 準備でも、音が出れば近隣の方には作業音と同じに聞こえる。特に朝の住宅地では、金属音や資材を動かす音は思っている以上に響くんだ。</p>
+<p>▷ 山口が近づく</p>
+<p><strong>山口：</strong> おはようございます。皆さん、朝早くからありがとうございます。ただ、この現場は住宅地の中にあります。作業開始時間前の音は、近隣クレームにつながりやすい部分です。朝礼前にできるのは、音の出ない確認や打ち合わせまでにしましょう。工具や資材を動かす作業は、決められた時間からお願いします。<br />
+<em>（怒らない。「ご理解いただいて助かります」の姿勢）</em></p>
+<p><strong>村田：</strong> 準備くらいならいいと思っていました。<br />
+<em>（止められて「え、そうなの？」という驚き）</em></p>
+<p><strong>山口：</strong> その気持ちは分かります。ただ、近隣の方には「もう工事が始まっている」と受け取られてしまいます。時間を守ることは、現場の信用を守ることでもあります。</p>
+<hr />
+<h2 id="scene-4">シーン 4　朝礼</h2>
+<p><strong><code>4:00〜5:00</code></strong>　｜　登場：山口・坂口・高木</p>
+<blockquote>
+<p>状況：チームとして現場に入る意識を高める朝礼。教訓的にならず、現場の雰囲気を大切に。</p>
+</blockquote>
+<p><strong>山口：</strong> 本日もよろしくお願いします。この現場は住宅地の中にあります。近隣住宅、通学路、歩行者の通行があります。作業内容だけでなく、音、粉じん、臭い、言葉遣い、服装、道路清掃にも注意してください。近隣の方から見ると、元請けも協力業者も区別はありません。ここで作業する全員が、この現場の顔です。<br />
+<em>（大きすぎず小さすぎない声。全員の顔を見渡しながら。「一緒にやっていこう」の雰囲気）</em></p>
+<p><strong>坂口：</strong> うちの職人も、今日はその意識でお願いします。良い仕事をするのは当然。でも、それだけじゃなく、周りに迷惑をかけないこともプロの仕事です。作業中だけじゃなく、休憩中、移動中、片付け中も見られている。そこまで含めて、職人としての信用だからな。</p>
+<p><strong>高木：</strong> 現場の外からどう見えるかも考える、ということですね。<br />
+<em>（素直に受け止めて聞く。反発しない）</em></p>
+<p><strong>坂口：</strong> そういうこと。自分たちの会社の名前も、この現場の信用も背負っていると思って動こう。</p>
+<hr />
+<h2 id="scene-5">シーン 5　現場トイレ・設備配置への気づき</h2>
+<p><strong><code>5:00〜6:00</code></strong>　｜　登場：近隣住民（AI）・高木・村田・坂口・山口</p>
+<blockquote>
+<p>状況：現場トイレが近隣住宅の窓に近いことに気づく。気づきを共有する大切さ。</p>
+</blockquote>
+<p><strong>近隣住民（AI）：</strong> 窓のすぐ近くにトイレがあるのは、少し気になりますね……。<br />
+<em>（嫌悪でなく「困ったな」という表情）</em></p>
+<p><strong>高木：</strong> あのトイレ、隣の家にかなり近いですね。</p>
+<p><strong>村田：</strong> 確かに。俺たちが置いたわけじゃないけど、気にはなるな。</p>
+<p><strong>坂口：</strong> そういう気づきは大事だ。自分たちが設置したものじゃなくても、気になることがあれば報告する。</p>
+<p>▷ 坂口が山口に報告する</p>
+<p><strong>坂口：</strong> 山口さん、現場トイレの位置ですが、隣家の窓に近いように見えます。近隣の方が気にされるかもしれません。</p>
+<p><strong>山口：</strong> ありがとうございます。確認して、移動できるか検討します。難しい場合でも、目隠し、清掃、消臭対策を徹底します。<br />
+<em>（誠実に受け止める）</em></p>
+<hr />
+<h2 id="scene-6">シーン 6　午前作業・洗濯物の近くでの切断作業</h2>
+<p><strong><code>6:00〜7:45</code></strong>　｜　登場：高木・村田・坂口・山口</p>
+<blockquote>
+<p>状況：職人側の効率と近隣側の感覚の対比。★洗濯物と切断機が同フレームに入る最重要カットあり。</p>
+</blockquote>
+<p><strong>高木：</strong> ここで切った方が早いですね。材料も近いですし。</p>
+<p><strong>村田：</strong> そうだな。すぐ終わるし、ここでやるか。</p>
+<p>▷ 切断機を準備。坂口が気づいて止める</p>
+<p><strong>坂口：</strong> 待った。隣の洗濯物が近い。<br />
+<em>（すぐ気づいて冷静に。「気づいた自分」への優しい誇り）</em></p>
+<p><strong>高木：</strong> でも、風もそんなに強くないですよ。</p>
+<p><strong>坂口：</strong> 実際に粉じんが飛ぶかどうかだけじゃない。近隣の方から見れば、洗濯物の近くで切断作業をしているだけで不安になる。</p>
+<p><strong>村田：</strong> 確かに、逆の立場なら気になるな。<br />
+<em>（★転換点。坂口の言葉でスッと納得する素直な反省）</em></p>
+<p><strong>山口：</strong> 作業場所を変えましょう。どうしてもここで作業する必要がある場合は、事前に説明し、養生や飛散防止をしてからにしてください。</p>
+<p><strong>高木：</strong> 作業効率だけで考えていました。周りを見てから判断しないといけないですね。</p>
+<p><strong>坂口：</strong> 早く終わらせることも大事だけど、近隣に迷惑をかけないことも同じくらい大事だ。きれいに納めるだけが職人の仕事じゃない。周りに配慮して作業することも、職人の腕の一つだよ。</p>
+<hr />
+<h2 id="scene-7">シーン 7　15時休憩・道路での休憩、喫煙、服装</h2>
+<p><strong><code>7:45〜9:15</code></strong>　｜　登場：高木・村田・通行人・近隣住民（AI）・坂口・山口</p>
+<blockquote>
+<p>⚠️ <strong>注意：</strong> たばこは火をつけない。取り出す仕草のみ。煙はフリー素材を合成（現場では絶対に煙を出さない）。</p>
+</blockquote>
+<p><strong>高木：</strong> 少しの休憩ですし、ここなら風も通っていいですね。</p>
+<p><strong>村田：</strong> 作業中じゃないし、邪魔にならなければ大丈夫だろ。<br />
+<em>（悪気なく「邪魔にならなければ大丈夫だろ」の自然体）</em></p>
+<p>▷ 通行人が避けて歩く</p>
+<p><strong>通行人：</strong> ちょっと通りづらいな……。</p>
+<p><strong>近隣住民（AI）：</strong> 道路で座って休憩されると、少し気になりますね……。</p>
+<p>▷ 村田がたばこを取り出し、火をつけようとする仕草（<strong>火はつけない</strong>）</p>
+<p><strong>近隣住民（AI）：</strong> たばこの臭いも気になります……。</p>
+<p>▷ 近隣住民（AI）が窓を閉める</p>
+<p><strong>坂口：</strong> 休憩場所を移動しよう。道路で休憩するのはやめてください。</p>
+<p><strong>高木：</strong> 端に座っているだけでもだめですか？</p>
+<p><strong>坂口：</strong> 道路は近隣の方や通行人も使う場所だ。少し端にいるつもりでも、通る人には圧迫感がある。現場の人が道路で座っているだけで、通りづらい、怖い、だらしないと感じる人もいる。</p>
+<p><strong>村田：</strong> 確かに、通行人が避けて歩いていましたね。</p>
+<p><strong>坂口：</strong> 休憩は決められた場所で取る。道路や近隣住宅の前では休憩しない。これは必ず守ろう。それから、喫煙は指定場所だけ。住宅側や道路では吸わないように。煙や臭いは、自分たちが思っている以上に広がる。近隣の方にとっては、かなり気になるものだ。服装も整えよう。休憩中でも、現場の人間として見られている。</p>
+<p><strong>山口：</strong> 暑い時期でも、上半身裸に近い格好や、だらしない服装は避けてください。腰パンや着崩しも、現場の印象を悪くします。皆さんの技術や仕事ぶりが良くても、休憩中の姿で評価を下げてしまうのはもったいないです。<br />
+<em>（「もったいない」と惜しむ姿勢。命令口調にしない）</em></p>
+<p><strong>高木：</strong> 休憩中でも、近隣の方や通行人から見られているんですね。</p>
+<p><strong>坂口：</strong> そうだ。近隣の方から見れば、作業中か休憩中かは関係ない。現場の人がどういう態度でいるかを見ている。</p>
+<p><strong>村田：</strong> 仕事以外のところで悪く見られるのは損ですね。</p>
+<hr />
+<h2 id="scene-8">シーン 8　通行人への対応</h2>
+<p><strong><code>9:15〜10:45</code></strong>　｜　登場：通行人・高木・坂口・山口</p>
+<blockquote>
+<p>状況：不十分な対応と丁寧な対応の差を見せる。</p>
+</blockquote>
+<p><strong>通行人：</strong> すみません、通れますか？</p>
+<p><strong>高木：</strong> あ、今ちょっと作業中なんで、待ってください。<br />
+<em>（本当に焦っている。どうしたらいいか分からない目線）</em></p>
+<p><strong>通行人：</strong> どこを通ればいいですか？</p>
+<p><strong>高木：</strong> えっと……ちょっと待ってください。</p>
+<p>▷ 通行人が困った表情。坂口が対応する</p>
+<p><strong>坂口：</strong> 申し訳ありません。ただいま資材を搬入しています。こちら側を通っていただけますか。足元にお気をつけください。<br />
+<em>（落ち着いて。言葉だけでなく手で誘導するジェスチャー）</em></p>
+<p><strong>通行人：</strong> ありがとうございます。</p>
+<p><strong>坂口：</strong> 高木、通行人が来たら、まず安全を確保する。それから、丁寧に案内する。</p>
+<p><strong>高木：</strong> すみません。作業を止めたら迷惑かと思って、焦ってしまいました。</p>
+<p><strong>坂口：</strong> 作業を止める判断も大事な仕事だ。通行人にとっては、現場の前を通るだけでも不安がある。「すみません」「こちらをお通りください」「足元にお気をつけください」「ありがとうございます」この一言があるだけで、現場の印象は全然違う。</p>
+<p><strong>山口：</strong> 通行人への対応は、元請けだけでなく、現場にいる全員で行うものです。近くにいる人が、まず声をかける。それが安全にも、信頼にもつながります。</p>
+<hr />
+<h2 id="scene-9">シーン 9　現場内の言葉遣い・乱暴な態度（重点シーン）</h2>
+<p><strong><code>10:45〜12:10</code></strong>　｜　登場：村田・高木・近隣住民（AI）・坂口・山口</p>
+<blockquote>
+<p>⚠️ <strong>安全：</strong> 身体接触は絶対に行わない。資材は安全確認済みの足元側へ。立ち位置とタイミングは事前にリハーサルする。</p>
+</blockquote>
+<p><strong>村田：</strong> おい、違うだろ！何やってんだよ！<br />
+<em>（怒りは本物だが悪人ではない。焦り・プレッシャーから来る怒りとして）</em></p>
+<p><strong>高木：</strong> すみません、すぐ直します。</p>
+<p><strong>村田：</strong> ちゃんと考えて動けよ！何回言えば分かるんだ！</p>
+<p>▷ 村田が資材を高木の足元近くに乱暴に叩きつける（<strong>身体接触なし</strong>）。高木が驚いて身を引く。</p>
+<p><strong>近隣住民（AI）：</strong> 怖い雰囲気ですね……。</p>
+<p>▷ 坂口が作業を止める</p>
+<p><strong>坂口：</strong> 村田さん、いったん止めましょう。今の言い方と態度は良くないです。<br />
+<em>（怒りでなく「困る」表情。村田への敬意は保つ）</em></p>
+<p><strong>村田：</strong> 悪い。急いでいたから、つい。</p>
+<p><strong>坂口：</strong> 注意や指導は必要です。でも、怒鳴ることや威圧することとは違います。現場の中の声は、外に聞こえています。乱暴な動きも、外から見ると暴力的に見えることがあります。</p>
+<p><strong>山口：</strong> 近隣の方が現場を見た時に、怒鳴り声や乱暴な態度があると、不安になります。「この現場は大丈夫だろうか」と思われてしまいます。安全面でも、品質面でも、落ち着いた現場づくりが大切です。<br />
+<em>（感情的にならず「品質・安全の問題」として冷静に）</em></p>
+<p><strong>村田：</strong> そうですね。仕事に集中していて、外からどう見えるかを忘れていました。</p>
+<p>▷ 村田が高木に向き直る</p>
+<p><strong>村田：</strong> 高木、さっきは悪かった。材料はこっちに置いてくれ。分からない時は先に聞いてくれればいい。<br />
+<em>（少し照れくさそうに、でもきちんと。ベテランが若手に謝れる大きさ）</em></p>
+<p><strong>高木：</strong> はい。ありがとうございます。</p>
+<hr />
+<h2 id="scene-10">シーン 10　近隣から注意を受けた後の対応（重点シーン）</h2>
+<p><strong><code>12:10〜13:20</code></strong>　｜　登場：近隣住民（後ろ姿・手元は実演／顔と声はAI）・山口・高木・村田・坂口</p>
+<blockquote>
+<p>📌 <strong>住民役：</strong> 後ろ姿・手元のみ実演（演技力不要、所作だけ自然に）。山口は正面・お辞儀で誠実さを強調。</p>
+</blockquote>
+<p><strong>近隣住民：</strong> すみません。午前中、少し音と声が気になりました。できれば気をつけてもらえると助かります。<br />
+<em>（ゆっくり歩み寄り→話す所作→軽い会釈で立ち去る）</em></p>
+<p><strong>山口：</strong> ご迷惑をおかけして申し訳ありません。作業内容と声の大きさを確認し、すぐに注意いたします。お声がけいただきありがとうございます。<br />
+<em>（深くお辞儀し、受け止める姿勢を体で表現）</em></p>
+<p>▷ 住民が離れる。少し離れた場所で高木・村田が小声で話す</p>
+<p><strong>高木：</strong> また言われちゃいましたね。</p>
+<p><strong>村田：</strong> 細かいなあ。こっちも仕事でやってるのにな。<br />
+<em>（悪気の薄い本音として）</em></p>
+<p>▷ その言葉が住民に聞こえてしまう（歩を止める／肩を落とす所作）。坂口がすぐ気づく。</p>
+<p><strong>坂口：</strong> 今のは良くない。注意を受けた後の言葉ほど、気をつけないといけない。</p>
+<p><strong>高木：</strong> すみません。聞こえていると思いませんでした。</p>
+<p><strong>坂口：</strong> 聞こえる、聞こえないの問題じゃない。近隣の方は、困っているから伝えてくれている。そこで陰で悪口を言えば、現場への不信感はもっと大きくなる。</p>
+<p><strong>山口：</strong> 苦情や注意は、現場を良くするための声でもあります。受け止めて、改善する。その姿勢が見えると、近隣の方も安心されます。</p>
+<p><strong>村田：</strong> そうですね。言われたことに反発するんじゃなくて、まず受け止めるべきでした。</p>
+<p><strong>高木：</strong> 次から気をつけます。</p>
+<hr />
+<h2 id="scene-11">シーン 11　夕方・道路清掃と作業終了時間</h2>
+<p><strong><code>13:20〜14:35</code></strong>　｜　登場：高木・村田・坂口・山口・通行人（セリフなし）</p>
+<blockquote>
+<p>状況：「最後まで丁寧に」がテーマ。高木が自分から気づく★山場あり。</p>
+</blockquote>
+<p><strong>高木：</strong> もう時間もないですし、道路の泥は明日でもいいですかね。<br />
+<em>（軽い気持ちで）</em></p>
+<p><strong>村田：</strong> 暗くなるし、今日は帰ろうか。</p>
+<p>▷ 通行人が汚れた道路を避けて歩く</p>
+<p><strong>坂口：</strong> 道路清掃までが今日の仕事だ。現場の外に出た汚れも、現場の責任だよ。</p>
+<p><strong>山口：</strong> 作業終了時間にも注意してください。夜遅くまで作業が続くと、音や照明で近隣の方に迷惑をかけます。朝早すぎる作業も、夜遅い作業も、住宅地ではクレームにつながります。時間内に終わる段取りを組むことも、プロの仕事です。</p>
+<p><strong>高木：</strong> 朝の準備音も、休憩中の姿も、帰る前の清掃も、全部見られているんですね。</p>
+<p><strong>坂口：</strong> そうだ。現場での仕事は、作業そのものだけじゃない。来た時。作業している時。休憩している時。帰る時。全部が、自分たちの仕事の評価につながる。</p>
+<p>▷ 全員で道路を清掃する</p>
+<p><strong>高木：</strong> こっちも少し汚れています。ここも掃いてから帰ります。<br />
+<em>（★山場。少し照れながらも自信がにじむ表情）</em></p>
+<p><strong>村田：</strong> いいね。そこに気づけるようになったら、一人前だな。<br />
+<em>（温かい笑顔）</em></p>
+<p><strong>坂口：</strong> そういう気づきが、信頼される職人につながる。</p>
+<hr />
+<h2 id="scene-12">シーン 12　エンディング</h2>
+<p><strong><code>14:35〜15:00</code></strong>　｜　登場：なし（セリフなし・ナレーションのみ）</p>
+<blockquote>
+<p>状況：1日の学びの集大成。希望感・温かさで締める。</p>
+</blockquote>
+<p>▷ 清掃され整った現場。職人たちが服装を整えて現場を後にする。<br />
+▷ 高木が通行人に会釈する（自然な温かさが出るまで繰り返す）。通行人が微笑んで会釈を返す。<br />
+▷ 近隣住民（AI）が安心した表情で通り過ぎる。</p>
+<p><em>演技メモ：セリフなし。表情と所作だけで温かさを出す。</em></p>
+</div>
+</body>
+</html>
